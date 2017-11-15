@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    StyleSheet,
+    StatusBar,
+    StyleSheet
 } from 'react-native';
 
 // Native componets 
@@ -13,14 +14,17 @@ import ItemChoice from '../components/ItemChoice';
 // Helpers 
 import { ITENS } from '../helpers/ListItemHelper';
 
-export default class PlacesScreen extends Component {
+export default class PontosTuristicosScreen extends Component {
     _renderItem({item}) {
         return(  
-            <Item 
-                image={item.image}
-                title={item.title}
-                content={item.content} 
-            />  
+            <View>
+                <StatusBar backgroundColor='#7EB239' />
+                <Item 
+                    image={item.image}
+                    title={item.title}
+                    content={item.content} 
+                />  
+            </View>
         );
     }
 

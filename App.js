@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
+  View,
   Text,
-  View
+  StyleSheet,
 } from 'react-native';
 
 // Native componets 
@@ -13,7 +12,7 @@ export default class App extends Component {
   render() {
     return(
       <Routes />
-    )
+    );
   }
 }
 

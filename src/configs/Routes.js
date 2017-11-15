@@ -4,13 +4,57 @@ import { View, Text, TouchableOpacity, StyleSheet, BackHandler } from 'react-nat
 import { Icon } from 'react-native-elements';
 
 // Screens
-import PlacesScreen from '../screens/PlacesScreen';
+import NoticiasScreen from '../screens/NoticiasScreen';
+import EventosScreen from '../screens/EventosScreen';
+import PromocoesScreen from '../screens/PromocoesScreen';
+import PontosTuristicosScreen from '../screens/PontosTuristicosScreen';
+import OndeDormirScreen from '../screens/OndeDormirScreen';
+import ComerciosScreen from '../screens/ComerciosScreen';
+import SobreAjudaScreen from '../screens/SobreAjudaScreen';
 
 // Rotas
 const Menu = DrawerNavigator({
-    Lugares : { 
-        screen: PlacesScreen,
-
+    Noticias : { 
+        screen: NoticiasScreen,
+        navigationOptions : {
+            title: 'Notícias' 
+        } 
+    },
+    Eventos : { 
+        screen: EventosScreen,
+        navigationOptions : {
+            title: 'Eventos' 
+        } 
+    },
+    Promocoes : { 
+        screen: PromocoesScreen,
+        navigationOptions : {
+            title: 'Promoções' 
+        } 
+    },
+    PontosTuristicos : { 
+        screen: PontosTuristicosScreen,
+        navigationOptions : {
+            title: 'Pontos Turísticos' 
+        } 
+    },
+    OndeDormir : { 
+        screen: OndeDormirScreen,
+        navigationOptions : {
+            title: 'Onde Dormir' 
+        } 
+    },
+    Comercios : { 
+        screen: ComerciosScreen,
+        navigationOptions : {
+            title: 'Comércios' 
+        } 
+    },
+    SobreAjuda : { 
+        screen: SobreAjudaScreen,
+        navigationOptions : {
+            title: 'Sobre e Ajuda' 
+        } 
     },
     ExitApp : {
         screen: ()=> BackHandler.exitApp(),
