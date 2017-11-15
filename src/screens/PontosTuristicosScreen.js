@@ -5,14 +5,12 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-
-// Native componets 
 import ListItem from '../components/ListItem';
 import Item from '../components/Item';
 import ItemChoice from '../components/ItemChoice';
 
 // Helpers 
-import { ITENS } from '../helpers/ListItemHelper';
+import { ITENS } from '../helpers/PontosTuristicosHelper';
 
 export default class PontosTuristicosScreen extends Component {
     _renderItem({item}) {
@@ -35,7 +33,7 @@ export default class PontosTuristicosScreen extends Component {
 
                 <ListItem 
                     itens={ITENS} 
-                    renderItem={(item)=> this._renderItem(item) }
+                    renderItem={(item)=> this._renderItem}
                 />
             </View>
         );
