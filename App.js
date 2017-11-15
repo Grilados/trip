@@ -12,27 +12,41 @@ import {
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+// Native componets 
+import ListItem from './src/components/ListItem';
+import Item from './src/components/Item';
 
-export default class App extends Component<{}> {
-  render() {
+// Helpers 
+import ListItemHelper from './src/helpers/ListItemHelper';
+
+const ITENS = [
+  {id: 0, title: 'Lorem'},
+  {id: 1, title: 'Lorem'},
+  {id: 2, title: 'Lorem'},
+  {id: 3, title: 'Lorem'},
+  {id: 4, title: 'Lorem'},
+];
+
+export default class App extends Component {
+
+  _renderItem({item}) {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Item 
+          image={require('./src/imgs/cachoeira1.jpg')}
+          title="Cachoeira Eubiose"
+          content="Trevo Baependi x Sobradinho a 2,5 km da cidade, São Thomé das Letras/MG" 
+        />  
       </View>
+    );
+  }
+
+  render() {
+    return(
+      <ListItem 
+        itens={ITENS} 
+        renderItem={({item})=> this._renderItem(item) }
+      />
     );
   }
 }
@@ -40,18 +54,5 @@ export default class App extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
