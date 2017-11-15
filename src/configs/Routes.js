@@ -8,8 +8,9 @@ import PlacesScreen from '../screens/PlacesScreen';
 
 // Rotas
 const Menu = DrawerNavigator({
-    Places : { 
+    Lugares : { 
         screen: PlacesScreen,
+
     },
     ExitApp : {
         screen: ()=> BackHandler.exitApp(),
@@ -24,13 +25,13 @@ const Menu = DrawerNavigator({
 });
 
 const Routes = StackNavigator({
-    Places : { 
+    Lugares : { 
         screen: Menu,
         navigationOptions: ({ navigation }) => ({
-            headerStyle: { backgroundColor: '#7EB239' },
+            headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
             headerLeft: <View> 
                             <TouchableOpacity style={styles.menu} onPress={()=>navigation.navigate('DrawerOpen')}> 
-                                <Text style={styles.menu}> Menu </Text>
+                                <Text style={styles.txtMenu}> Menu </Text>
                             </TouchableOpacity> 
                         </View>
         })
@@ -42,6 +43,9 @@ export default Routes;
 
 const styles = StyleSheet.create({
     menu : {
-        paddingLeft: 10
+        paddingLeft: 15,
+    },
+    txtMenu : {
+        color: '#FFFFFF'
     }
 });
