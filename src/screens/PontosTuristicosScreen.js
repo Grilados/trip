@@ -33,7 +33,7 @@ export default class PontosTuristicosScreen extends Component {
 
                 <ListItem 
                     itens={ITENS} 
-                    renderItem={(item)=> this._renderItem}
+                    renderItem={(item)=> this._renderItem(item)}
                 />
             </View>
         );
