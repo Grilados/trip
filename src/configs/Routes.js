@@ -63,6 +63,7 @@ const Menu = DrawerNavigator({
         } 
     }
 }, {
+    initialRouteName: 'Comercios',
     contentOptions : {
         activeTintColor: '#82B43F'
     }
