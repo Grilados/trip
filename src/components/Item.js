@@ -6,23 +6,47 @@ import { View,
          TouchableOpacity,
          StyleSheet 
 } from 'react-native';
+import { Badge } from 'react-native-elements';
 
 const { width } = Dimensions.get('window');
 
 export default class Item extends Component {
     render() {
-        return(
-            <View style={styles.container}>
-                <Image style={styles.image} source={this.props.image} />
-                <View style={styles.info}>
-                    <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
-                    <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
-                </View>
-                <View style={styles.menu}>
-                    <TouchableOpacity><Text style={styles.txtMenu}>Ver Mais</Text></TouchableOpacity>
-                </View>
-            </View>
-        );
+
+        switch (this.props.layout) {
+            case "places":
+                return(
+                    <View style={styles.container}>
+                        <Image style={styles.image} source={this.props.image} />
+                        <View style={styles.info}>
+                            <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
+                            <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
+                        </View>
+                        <View style={styles.menu}>
+                            <TouchableOpacity><Text style={styles.txtMenu}>Ver Mais</Text></TouchableOpacity>
+                        </View>
+                    </View>
+                );
+            case "trade":
+                return(
+                    <View style={styles.container}>
+                        <Image style={styles.image} source={this.props.image} />
+                        <View style={styles.info}>
+                            <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
+                            <Text style={styles.phone}>{this.props.phone}</Text>
+                            <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
+                        </View>
+                        <View style={styles.km}>
+                            <Badge
+                                value="8,2 km"
+                                textStyle={{ color: '#FFFFFF' }}
+                                containerStyle={{ backgroundColor: '#7EB239' }}
+                            />
+                        </View>
+                    </View>
+                );    
+        }
+        
     }
 }
 
@@ -42,8 +66,13 @@ const styles = StyleSheet.create({
     },
     menu : {
         position: 'absolute',
-        right: 20,
-        bottom: 10
+        right: 25,
+        bottom: 18,
+    },
+    km : {
+        position: 'absolute',
+        top: 18,
+        right: 25
     },
 
     image : {

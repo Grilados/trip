@@ -14,7 +14,7 @@ const { width, height } = Dimensions.get('window');
 export default class Search extends Component {
     render() {
         return( 
-            <TouchableOpacity style={styles.container}>
+            <View style={styles.container}>
                 <View style={styles.containerIcon}>
                     <Icon name="ios-search-outline" color="#0C101F" size={27}/>
                 </View>
@@ -26,10 +26,10 @@ export default class Search extends Component {
                     underlineColorAndroid="#FFFFFF"
                     placeholder="Restaurante, Farmácia..."
                 />
-                <View style={styles.containerIndicator}>
+                <TouchableOpacity style={styles.containerIndicator}>
                     <Icon  name="ios-arrow-dropright-circle" color="#0C101F" size={27}/>
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </View>
         );
     }
 }

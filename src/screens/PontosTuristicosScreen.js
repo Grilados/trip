@@ -5,9 +5,9 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
+import ItemChoice from '../components/ItemChoice';
 import ListItem from '../components/ListItem';
 import Item from '../components/Item';
-import ItemChoice from '../components/ItemChoice';
 
 // Helpers 
 import { ITENS } from '../helpers/PontosTuristicosHelper';
@@ -16,11 +16,11 @@ export default class PontosTuristicosScreen extends Component {
     _renderItem({item}) {
         return(  
             <View>
-                <StatusBar backgroundColor='#7EB239' />
                 <Item 
                     image={item.image}
                     title={item.title}
                     content={item.content} 
+                    layout="places"
                 />  
             </View>
         );
@@ -29,6 +29,7 @@ export default class PontosTuristicosScreen extends Component {
     render() {
         return(
             <View style={styles.container}>
+                <StatusBar backgroundColor='#7EB239' />
                 <ItemChoice choice="Cachoeiras" />
 
                 <ListItem 

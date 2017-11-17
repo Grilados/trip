@@ -6,6 +6,7 @@ import { View,
          TouchableOpacity,
          StyleSheet 
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,9 +15,9 @@ export default class ItemChoice extends Component {
         return( 
             <TouchableOpacity style={styles.container}>
                 <Text style={styles.choice}>{this.props.choice}</Text>
-                <View style={styles.indicator}>
-                    <Text style={styles.txtIndicator}>*</Text>
-                </View>
+                <TouchableOpacity style={styles.containerIndicator}>
+                    <Icon  name="ios-arrow-down" color="#0C101F" size={27}/>
+                </TouchableOpacity>
             </TouchableOpacity>
         );
     }
@@ -35,13 +36,9 @@ const styles = StyleSheet.create({
         color: '#0F0F0F',
         marginLeft: 4
     },
-    indicator : {
+    containerIndicator : {
         position: 'absolute',
         right: 20,
-        top: 20
-    },
-    txtIndicator : {
-        fontSize: 15,
-        color: '#0F0F0F',
+        top: 15
     }
 });

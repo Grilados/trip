@@ -63,7 +63,7 @@ const Menu = DrawerNavigator({
         } 
     }
 }, {
-    initialRouteName: 'Comercios',
+    initialRouteName: 'PontosTuristicos',
     contentOptions : {
         activeTintColor: '#82B43F'
     }
