@@ -12,6 +12,7 @@ import PontosTuristicosScreen from '../screens/PontosTuristicosScreen';
 import OndeDormirScreen from '../screens/OndeDormirScreen';
 import ComerciosScreen from '../screens/ComerciosScreen';
 import SobreAjudaScreen from '../screens/SobreAjudaScreen';
+import CuponsScreen from '../screens/CuponsScreen'
 import GerarCupomScreen from '../screens/GerarCupomScreen';
 
 // Menu
@@ -95,13 +96,13 @@ const Routes = StackNavigator({
         })
         
     },
-    // Cupons : { 
-    //     screen: CuponsScreen,
-    //     navigationOptions : {
-    //         title: 'Gerar Cupom' ,
-    //         headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
-    //     } 
-    // },
+    Cupons : { 
+        screen: CuponsScreen,
+        navigationOptions : {
+            title: 'Cupons' ,
+            headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
+        } 
+    },
     GerarCupom : { 
         screen: GerarCupomScreen,
         navigationOptions : {
@@ -110,7 +111,7 @@ const Routes = StackNavigator({
         } 
     },
 }, {
-    initialRouteName: 'GerarCupom'
+    initialRouteName: 'Cupons'
 }); 
 
 export {Routes, Tab};

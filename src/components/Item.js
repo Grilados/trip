@@ -8,6 +8,8 @@ import { View,
 } from 'react-native';
 import { Badge } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ButtonWarning from '../components/buttons/ButtonWarning';
+import ButtonDelete from '../components/buttons/ButtonDelete';
 
 const { width } = Dimensions.get('window');
 
@@ -45,16 +47,34 @@ export default class Item extends Component {
                             />
                         </View>
                     </View>
-                );    
+                );  
             case "coupon":
                 return(
                     <View style={styles.couponContainer}>
-                        <Image style={styles.couponImage} source={this.props.image} />
-                        <View style={styles.couponInfo}>
+                        <View style={styles.couponOptions}>
+                            <Image style={styles.couponImage} source={this.props.image} />
+                            <View style={styles.couponInfo}>
+                                <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
+                                <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
+                            </View>
+                        </View>
+                        
+                        <View style={styles.couponOptions}>
+                            <Text style={styles.cupomValidity}> Válido até 10/dez </Text>
+                            <ButtonDelete  value="Excluir" />
+                            <ButtonWarning  value="CÓDIGO" />
+                        </View>
+                    </View>
+                );
+            case "couponTwo":
+                return(
+                    <View style={styles.couponTwoContainer}>
+                        <Image style={styles.couponTwoImage} source={this.props.image} />
+                        <View style={styles.couponTwoInfo}>
                             <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
                             <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
                         </View>
-                        <View style={styles.iconCoupon}>
+                        <View style={styles.iconTwoCoupon}>
                             <Icon  name="ios-arrow-forward" color="#CACBCE" size={25}/>
                         </View>
                     </View>
@@ -111,6 +131,34 @@ const styles = StyleSheet.create({
     },
 
     couponContainer : {
+        width: width-40,
+        alignSelf: 'center',
+        elevation: 3,
+        borderColor: '#E6E6E6',
+        borderBottomWidth: 1,
+        backgroundColor: '#FFFFFF'
+    },
+    couponOptions : {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 5
+    },
+    couponImage : {
+        width: 55,
+        height: 55,
+        marginRight: 10    
+    },
+    couponInfo : {
+        justifyContent: 'flex-start',
+        width: 220,
+        marginRight: 10
+    },
+    cupomValidity : {
+        color: '#EFB126'
+    },
+    
+
+    couponTwoContainer : {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -119,18 +167,18 @@ const styles = StyleSheet.create({
         elevation: 3,
         backgroundColor: '#FFFFFF'
     },
-    couponImage : {
+    couponTwoImage : {
         width: 75,
         height: 75,
         marginRight: 10    
     },
-    couponInfo: {
+    couponTwoInfo: {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         width: 220,
         marginRight: 10
     },
-    iconCoupon : {
+    iconTwoCoupon : {
         marginRight: 20  
     }
 }); 

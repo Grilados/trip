@@ -3,6 +3,7 @@ import {
     View,
     Text,
     Image,
+    StatusBar,
     StyleSheet
 } from 'react-native';
 import Item from '../components/Item';
@@ -13,11 +14,13 @@ export default class GerarCupomScreen extends Component {
     render() {
         return(
             <View style={styles.container}>
+                <StatusBar backgroundColor='#7EB239' />
+                
                 <Item 
                     image={require('../imgs/starbucks.jpg')}
                     title="Starbucks"
                     content="Promoção imperdível, compre um e leve outro, confira!" 
-                    layout="coupon"
+                    layout="couponTwo"
                 />
 
                 <View style={styles.contentContainer}>
