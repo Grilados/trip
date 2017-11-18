@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackNavigator, DrawerNavigator } from 'react-navigation';
+import { StackNavigator, DrawerNavigator, TabNavigator } from 'react-navigation';
 import { View, Text, TouchableOpacity, StyleSheet, BackHandler } from 'react-native';
 import { Icon } from 'react-native-elements';
 
@@ -12,7 +12,7 @@ import OndeDormirScreen from '../screens/OndeDormirScreen';
 import ComerciosScreen from '../screens/ComerciosScreen';
 import SobreAjudaScreen from '../screens/SobreAjudaScreen';
 
-// Rotas
+// Menu
 const Menu = DrawerNavigator({
     Noticias : { 
         screen: NoticiasScreen,
@@ -63,14 +63,20 @@ const Menu = DrawerNavigator({
         } 
     }
 }, {
-    initialRouteName: 'PontosTuristicos',
+    initialRouteName: 'Comercios',
     contentOptions : {
         activeTintColor: '#82B43F'
     }
 });
 
+// Tabs
+const Tab = TabNavigator({
+    Promocoes: {screen: PromocoesScreen},
+    SobreAjuda: {screen: SobreAjudaScreen}
+  });
+
 const Routes = StackNavigator({
-    Lugares : { 
+    PontosTuristicosScreen : { 
         screen: Menu,
         navigationOptions: ({ navigation }) => ({
             headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
@@ -84,7 +90,7 @@ const Routes = StackNavigator({
     }
 }); 
 
-export default Routes;
+export {Routes, Tab};
 
 const styles = StyleSheet.create({
     menu : {

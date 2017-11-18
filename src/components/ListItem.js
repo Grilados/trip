@@ -29,6 +29,7 @@ export default class ListItem extends Component {
                         onRefresh={()=>this._onRefresh()}
                     />
                 }
+                ListFooterComponent={this.props.ListFooterComponent}
             />
         );
     }
