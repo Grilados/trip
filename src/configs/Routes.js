@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet, BackHandler } from 'react-nat
 import { Icon } from 'react-native-elements';
 
 // Screens
+import HomeScreen from '../screens/HomeScreen';
 import NoticiasScreen from '../screens/NoticiasScreen';
 import EventosScreen from '../screens/EventosScreen';
 import PromocoesScreen from '../screens/PromocoesScreen';
@@ -14,6 +15,12 @@ import SobreAjudaScreen from '../screens/SobreAjudaScreen';
 
 // Menu
 const Menu = DrawerNavigator({
+    Inicio : { 
+        screen: HomeScreen,
+        navigationOptions : {
+            title: 'Início' 
+        } 
+    },
     Noticias : { 
         screen: NoticiasScreen,
         navigationOptions : {
@@ -63,7 +70,7 @@ const Menu = DrawerNavigator({
         } 
     }
 }, {
-    initialRouteName: 'Comercios',
+    initialRouteName: 'Inicio',
     contentOptions : {
         activeTintColor: '#82B43F'
     }
@@ -73,7 +80,7 @@ const Menu = DrawerNavigator({
 const Tab = TabNavigator({
     Promocoes: {screen: PromocoesScreen},
     SobreAjuda: {screen: SobreAjudaScreen}
-  });
+});
 
 const Routes = StackNavigator({
     PontosTuristicosScreen : { 

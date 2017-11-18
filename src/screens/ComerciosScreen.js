@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF'
     },
     listFooterComponent : {
-        margin: 10,
+        margin: 20,
         justifyContent: 'center',
         alignItems: 'center'
     }
