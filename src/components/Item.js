@@ -7,6 +7,7 @@ import { View,
          StyleSheet 
 } from 'react-native';
 import { Badge } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
 
@@ -45,6 +46,19 @@ export default class Item extends Component {
                         </View>
                     </View>
                 );    
+            case "coupon":
+                return(
+                    <View style={styles.couponContainer}>
+                        <Image style={styles.couponImage} source={this.props.image} />
+                        <View style={styles.couponInfo}>
+                            <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
+                            <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
+                        </View>
+                        <View style={styles.iconCoupon}>
+                            <Icon  name="ios-arrow-forward" color="#CACBCE" size={25}/>
+                        </View>
+                    </View>
+                );
         }
         
     }
@@ -94,5 +108,29 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: '#82B43F'
+    },
+
+    couponContainer : {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width,
+        padding: 10,
+        elevation: 3,
+        backgroundColor: '#FFFFFF'
+    },
+    couponImage : {
+        width: 75,
+        height: 75,
+        marginRight: 10    
+    },
+    couponInfo: {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        width: 220,
+        marginRight: 10
+    },
+    iconCoupon : {
+        marginRight: 20  
     }
 }); 
