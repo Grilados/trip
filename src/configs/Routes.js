@@ -72,6 +72,7 @@ const Menu = DrawerNavigator({
         } 
     }
 }, {
+    initialRouteName: 'Inicio',
     contentOptions : {
         activeTintColor: '#82B43F'
     }
@@ -79,8 +80,8 @@ const Menu = DrawerNavigator({
 
 // Tabs
 const Tab = TabNavigator({
-    Promocoes: {screen: PromocoesScreen},
-    SobreAjuda: {screen: SobreAjudaScreen}
+    SobreAjuda: {screen: SobreAjudaScreen},
+    Cupons: {screen: CuponsScreen}
 });
 
 const Routes = StackNavigator({
@@ -111,7 +112,7 @@ const Routes = StackNavigator({
         } 
     },
 }, {
-    initialRouteName: 'Cupons'
+   // initialRouteName: 'Cupons'
 }); 
 
 export {Routes, Tab};

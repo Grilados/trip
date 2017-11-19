@@ -14,6 +14,7 @@ import { ITENS } from '../helpers/CuponsHelper';
 
 export default class GerarCupomScreen extends Component {   
     _renderItem({item}) {
+        const { navigate } = this.props.navigation;
         return(  
             <View style={styles.item}>
                 <Item 
@@ -21,6 +22,8 @@ export default class GerarCupomScreen extends Component {
                     title={item.title}
                     content={item.content} 
                     layout="coupon"
+                    ButtonDeleteOnClick={()=>alert('delete')}
+                    ButtonWarningOnClick={()=>navigate('GerarCupom')}
                 />
             </View>
         );

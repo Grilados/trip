@@ -61,8 +61,8 @@ export default class Item extends Component {
                         
                         <View style={styles.couponOptions}>
                             <Text style={styles.cupomValidity}> Válido até 10/dez </Text>
-                            <ButtonDelete  value="Excluir" />
-                            <ButtonWarning  value="CÓDIGO" />
+                            <ButtonDelete  onClick={this.props.ButtonDeleteOnClick} value="Excluir" />
+                            <ButtonWarning  onClick={this.props.ButtonWarningOnClick} value="CÓDIGO" />
                         </View>
                     </View>
                 );
