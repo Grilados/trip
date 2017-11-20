@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text, StatusBar } from 'react-native';
-import { Tab } from '../configs/Routes';
+import { View, 
+         Text, 
+         StatusBar, 
+         StyleSheet 
+} from 'react-native';
 
-export default class PromocoesScreen extends Component {
+export default class PromocoesScreen extends Component {  
+    static navigationOptions = {
+        tabBarLabel: 'Promoções',
+    };
+
     render() {
         return(
-            <View>
+            <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Tab />
+                <Text>Promoções</Text>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container : {
+        flex: 1
+    }
+}); 

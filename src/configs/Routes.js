@@ -12,63 +12,64 @@ import PontosTuristicosScreen from '../screens/PontosTuristicosScreen';
 import OndeDormirScreen from '../screens/OndeDormirScreen';
 import ComerciosScreen from '../screens/ComerciosScreen';
 import SobreAjudaScreen from '../screens/SobreAjudaScreen';
-import CuponsScreen from '../screens/CuponsScreen'
+import CuponsScreen from '../screens/CuponsScreen';
 import GerarCupomScreen from '../screens/GerarCupomScreen';
+import PromCupoTabScreen from '../screens/PromCupoTabScreen';
 
 // Menu
 const Menu = DrawerNavigator({
     Inicio : { 
         screen: HomeScreen,
         navigationOptions : {
-            title: 'Início' 
+            drawerLabel: 'Início' 
         } 
     },
     Noticias : { 
         screen: NoticiasScreen,
         navigationOptions : {
-            title: 'Notícias' 
+            drawerLabel: 'Notícias' 
         } 
     },
     Eventos : { 
         screen: EventosScreen,
         navigationOptions : {
-            title: 'Eventos' 
+            drawerLabel: 'Eventos' 
         } 
     },
     Promocoes : { 
-        screen: PromocoesScreen,
+        screen: PromCupoTabScreen,
         navigationOptions : {
-            title: 'Promoções' 
-        } 
+            drawerLabel: 'Promoções'
+        }
     },
     PontosTuristicos : { 
         screen: PontosTuristicosScreen,
         navigationOptions : {
-            title: 'Pontos Turísticos' 
+            drawerLabel: 'Pontos Turísticos' 
         } 
     },
     OndeDormir : { 
         screen: OndeDormirScreen,
         navigationOptions : {
-            title: 'Onde Dormir' 
+            drawerLabel: 'Onde Dormir' 
         } 
     },
     Comercios : { 
         screen: ComerciosScreen,
         navigationOptions : {
-            title: 'Comércios' 
+            drawerLabel: 'Comércios' 
         } 
     },
     SobreAjuda : { 
         screen: SobreAjudaScreen,
         navigationOptions : {
-            title: 'Sobre e Ajuda' 
+            drawerLabel: 'Sobre e Ajuda' 
         } 
     },
     ExitApp : {
         screen: ()=> BackHandler.exitApp(),
         navigationOptions : {
-            title: 'Sair' 
+            drawerLabel: 'Sair' 
         } 
     }
 }, {
@@ -78,13 +79,7 @@ const Menu = DrawerNavigator({
     }
 });
 
-// Tabs
-const Tab = TabNavigator({
-    SobreAjuda: {screen: SobreAjudaScreen},
-    Cupons: {screen: CuponsScreen}
-});
-
-const Routes = StackNavigator({
+export const Routes = StackNavigator({
     PontosTuristicosScreen : { 
         screen: Menu,
         navigationOptions: ({ navigation }) => ({
@@ -115,7 +110,26 @@ const Routes = StackNavigator({
    // initialRouteName: 'Cupons'
 }); 
 
-export {Routes, Tab};
+// Tabs
+export const Tab = TabNavigator({
+    Promocoes: {screen: PromocoesScreen},
+    Cupons: {screen: CuponsScreen}
+}, {
+    tabBarPosition: 'top',
+    animationEnabled: true,
+    tabBarOptions: {
+        activeTintColor: '#7EB239',
+        inactiveTintColor: '#000000',
+        upperCaseLabel: false,
+        style: {
+            backgroundColor: '#FFFFFF'
+        },
+        indicatorStyle: {
+            backgroundColor: '#7EB239'
+        }
+    }
+    
+});
 
 const styles = StyleSheet.create({
     menu : {

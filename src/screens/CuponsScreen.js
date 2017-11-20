@@ -13,6 +13,10 @@ import Item from '../components/Item';
 import { ITENS } from '../helpers/CuponsHelper';
 
 export default class GerarCupomScreen extends Component {   
+    static navigationOptions = {
+        tabBarLabel: 'Cupons',
+    };
+
     _renderItem({item}) {
         const { navigate } = this.props.navigation;
         return(  

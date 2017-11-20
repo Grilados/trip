@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, 
          Text, 
-        StatusBar
+         StatusBar
 } from 'react-native';
 
 // Helpers 
@@ -12,6 +12,7 @@ export default class NoticiasScreen extends Component {
         return(
             <View>
                 <StatusBar backgroundColor='#7EB239' />
+                <Text>NoticiasSreen</Text>
             </View>
         );
     }
