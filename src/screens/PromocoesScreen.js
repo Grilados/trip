@@ -4,6 +4,7 @@ import { View,
          StatusBar, 
          StyleSheet 
 } from 'react-native';
+import Card from '../components/Card';
 
 export default class PromocoesScreen extends Component {  
     static navigationOptions = {
@@ -14,7 +15,7 @@ export default class PromocoesScreen extends Component {
         return(
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Text>Promoções</Text>
+                <Card />
             </View>
         );
     }
@@ -22,6 +23,7 @@ export default class PromocoesScreen extends Component {
 
 const styles = StyleSheet.create({
     container : {
-        flex: 1
+        flex: 1,
+        alignItems: 'center'
     }
 }); 

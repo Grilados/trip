@@ -73,7 +73,7 @@ const Menu = DrawerNavigator({
         } 
     }
 }, {
-    initialRouteName: 'Inicio',
+    initialRouteName: 'Promocoes',
     contentOptions : {
         activeTintColor: '#82B43F'
     }
