@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     },
     contentTwo : {
         marginTop: 10,
+        paddingBottom: 15,
         color: '#7EB239',
         fontSize: 22   
     }

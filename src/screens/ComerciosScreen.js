@@ -22,6 +22,7 @@ export default class ComerciosScreen extends Component {
             </View>
         );  
     }
+
     _renderItem({item}) {
         return(  
             <View>
