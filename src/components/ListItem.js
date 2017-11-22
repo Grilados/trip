@@ -1,7 +1,7 @@
 import React, { Component } from 'React';
 import { FlatList, RefreshControl } from 'react-native';
 
-export default class ListItem extends Component {
+class ListItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -34,3 +34,5 @@ export default class ListItem extends Component {
         );
     }
 }
+
+export { ListItem };

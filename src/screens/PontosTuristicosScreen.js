@@ -5,9 +5,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import ItemChoice from '../components/ItemChoice';
-import ListItem from '../components/ListItem';
-import Item from '../components/Item';
+import { ItemChoice, ListItem, Item } from '../components';
 
 // Helpers 
 import { ITENS } from '../helpers/PontosTuristicosHelper';

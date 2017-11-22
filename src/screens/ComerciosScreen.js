@@ -4,11 +4,12 @@ import { View,
          StatusBar,
          StyleSheet
 } from 'react-native';
-import Search from '../components/Search';
-import ListItem from '../components/ListItem';
-import Item from '../components/Item';
-import Message from '../components/Message';
-import ButtonPrimary from '../components/buttons/ButtonPrimary';
+import { Search, 
+         ListItem,
+         Item,
+         Message,
+         ButtonPrimary   
+} from '../components';
 
 // Helpers 
 import { ITENS } from '../helpers/ComerciosHelper';

@@ -4,8 +4,7 @@ import { View,
          StatusBar, 
          StyleSheet 
 } from 'react-native';
-import Card from '../components/Card';
-import ListItem from '../components/ListItem';
+import { Card, ListItem } from '../components';
 
 // Helpers 
 import { ITENS } from '../helpers/PromocoesHelper';

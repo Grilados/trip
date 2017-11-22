@@ -6,9 +6,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import Item from '../components/Item';
-import ButtonWarning from '../components/buttons/ButtonWarning';
-import ButtonCancel from '../components/buttons/ButtonCancel';
+import { Item, ButtonWarning, ButtonCancel } from '../components';
 
 export default class GerarCupomScreen extends Component {   
     render() {

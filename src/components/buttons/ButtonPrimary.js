@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
 
-export default class ButtonPrimary extends Component {
+class ButtonPrimary extends Component {
     render() {
         return(
             <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
@@ -19,6 +19,8 @@ export default class ButtonPrimary extends Component {
         );
     }
 }
+
+export { ButtonPrimary };
 
 const styles = StyleSheet.create({
     button : {

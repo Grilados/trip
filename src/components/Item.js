@@ -8,12 +8,11 @@ import { View,
 } from 'react-native';
 import { Badge } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ButtonWarning from '../components/buttons/ButtonWarning';
-import ButtonDelete from '../components/buttons/ButtonDelete';
+import { ButtonWarning, ButtonDelete } from './index';
 
 const { width } = Dimensions.get('window');
 
-export default class Item extends Component {
+class Item extends Component {
     render() {
 
         switch (this.props.layout) {
@@ -83,6 +82,8 @@ export default class Item extends Component {
         
     }
 }
+
+export { Item };
 
 const styles = StyleSheet.create({
     container : {

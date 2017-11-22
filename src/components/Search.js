@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
-export default class Search extends Component {
+class Search extends Component {
     render() {
         return( 
             <View style={styles.container}>
@@ -33,6 +33,8 @@ export default class Search extends Component {
         );
     }
 }
+
+export { Search };
 
 const styles = StyleSheet.create({
     container: {

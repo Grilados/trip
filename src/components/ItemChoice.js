@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
-export default class ItemChoice extends Component {
+class ItemChoice extends Component {
     render() {
         return( 
             <TouchableOpacity style={styles.container}>
@@ -22,6 +22,8 @@ export default class ItemChoice extends Component {
         );
     }
 }
+
+export { ItemChoice };
 
 const styles = StyleSheet.create({
     container: {

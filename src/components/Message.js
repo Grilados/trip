@@ -7,7 +7,7 @@ import { View,
 
 const { width } = Dimensions.get('window');
 
-export default class Message extends Component {
+class Message extends Component {
     render() {
         return(
             <View style={styles.container}>
@@ -19,6 +19,8 @@ export default class Message extends Component {
         );
     }
 }
+
+export { Message };
 
 const styles = StyleSheet.create({
     container : {

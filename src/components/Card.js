@@ -10,7 +10,7 @@ import { Badge } from 'react-native-elements';
 
 const { width } = Dimensions.get('window');
 
-export default class Card extends Component {
+class Card extends Component {
     render() {
         return(
             <View style={styles.container}>
@@ -34,6 +34,8 @@ export default class Card extends Component {
         );
     }
 }
+
+export { Card };
 
 const styles = StyleSheet.create({
     container : {

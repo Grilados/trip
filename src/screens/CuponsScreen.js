@@ -6,8 +6,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import ListItem from '../components/ListItem';
-import Item from '../components/Item';
+import { ListItem, Item } from '../components';
 
 // Helpers 
 import { ITENS } from '../helpers/CuponsHelper';

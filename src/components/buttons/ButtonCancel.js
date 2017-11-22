@@ -8,7 +8,7 @@ import {
 
 const { width } = Dimensions.get('window');
 
-export default class ButtonCancel extends Component {
+class ButtonCancel extends Component {
     render() {
         return(
             <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
@@ -17,6 +17,8 @@ export default class ButtonCancel extends Component {
         );
     }
 }
+
+export { ButtonCancel };
 
 const styles = StyleSheet.create({
     button : {
