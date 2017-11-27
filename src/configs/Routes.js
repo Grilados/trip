@@ -1,7 +1,7 @@
 import React from 'react';
-import { StackNavigator, DrawerNavigator, TabNavigator } from 'react-navigation';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, BackHandler } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { StackNavigator, TabNavigator } from 'react-navigation';
+import { View, Text, TouchableOpacity, BackHandler } from 'react-native';
+import { SideMenu, ButtonHeaderOpenSideMenu } from '../components';
 
 // Screens
 import HomeScreen from '../screens/HomeScreen';
@@ -16,85 +16,34 @@ import CuponsScreen from '../screens/CuponsScreen';
 import GerarCupomScreen from '../screens/GerarCupomScreen';
 import PromCupoTabScreen from '../screens/PromCupoTabScreen';
 
-const { width } = Dimensions.get('window');
-
-// Menu
-const Menu = DrawerNavigator({
+export const Routes = StackNavigator({
     Inicio : { 
-        screen: HomeScreen,
-        navigationOptions : {
-            drawerLabel: 'Início' 
-        } 
+        screen: SideMenu,
     },
-    Noticias : { 
-        screen: NoticiasScreen,
-        navigationOptions : {
-            drawerLabel: 'Notícias' 
-        } 
-    },
-    Eventos : { 
-        screen: EventosScreen,
-        navigationOptions : {
-            drawerLabel: 'Eventos' 
-        } 
-    },
+    // Noticias : { 
+    //     screen: NoticiasScreen,
+    // },
+    // Eventos : { 
+    //     screen: EventosScreen,
+    // },
     Promocoes : { 
         screen: PromCupoTabScreen,
-        navigationOptions : {
-            drawerLabel: 'Promoções'
-        }
     },
     PontosTuristicos : { 
-        screen: PontosTuristicosScreen,
-        navigationOptions : {
-            drawerLabel: 'Pontos Turísticos' 
-        } 
+        screen: PontosTuristicosScreen
     },
     OndeDormir : { 
-        screen: OndeDormirScreen,
-        navigationOptions : {
-            drawerLabel: 'Onde Dormir' 
-        } 
+        screen: OndeDormirScreen
     },
     Comercios : { 
-        screen: ComerciosScreen,
-        navigationOptions : {
-            drawerLabel: 'Comércios' 
-        } 
+        screen: ComerciosScreen
     },
-    SobreAjuda : { 
-        screen: SobreAjudaScreen,
-        navigationOptions : {
-            drawerLabel: 'Sobre e Ajuda' 
-        } 
-    },
-    ExitApp : {
-        screen: ()=> BackHandler.exitApp(),
-        navigationOptions : {
-            drawerLabel: 'Sair' 
-        } 
-    }
-}, {
-    drawerWidth: width-150,
-    initialRouteName: 'Promocoes',
-    contentOptions : {
-        activeTintColor: '#82B43F'
-    }
-});
-
-export const Routes = StackNavigator({
-    PontosTuristicosScreen : { 
-        screen: Menu,
-        navigationOptions: ({ navigation }) => ({
-            headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
-            headerLeft: <View> 
-                            <TouchableOpacity style={styles.menu} onPress={()=>navigation.navigate('DrawerOpen')}>
-                                <Icon  name="ios-menu-outline" color="#FFFFFF" size={27}/>
-                            </TouchableOpacity> 
-                        </View>
-        })
-        
-    },
+    // SobreAjuda : { 
+    //     screen: SobreAjudaScreen,
+    //     navigationOptions : {
+    //         drawerLabel: 'Sobre e Ajuda' 
+    //     } 
+    // },
     Cupons : { 
         screen: CuponsScreen,
         navigationOptions : {
@@ -110,13 +59,17 @@ export const Routes = StackNavigator({
         } 
     },
 }, {
-   // initialRouteName: 'Cupons'
+    initialRouteName: 'Inicio',
+    navigationOptions: ({ navigation }) => ({
+        headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
+        headerLeft: <ButtonHeaderOpenSideMenu navigation={navigation} />  
+    })
 }); 
 
 // Tabs
 export const Tab = TabNavigator({
-    Promocoes: {screen: PromocoesScreen},
-    Cupons: {screen: CuponsScreen}
+    Promocoes: { screen: PromocoesScreen },
+    Cupons: { screen: CuponsScreen }
 }, {
     tabBarPosition: 'top',
     animationEnabled: true,
@@ -131,11 +84,5 @@ export const Tab = TabNavigator({
             backgroundColor: '#7EB239',
             height: 5
         }
-    }
-});
-
-const styles = StyleSheet.create({
-    menu : {
-        paddingLeft: 15,
     }
 });

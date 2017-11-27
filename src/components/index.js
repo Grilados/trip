@@ -2,6 +2,9 @@ export * from './buttons/ButtonCancel';
 export * from './buttons/ButtonDelete';
 export * from './buttons/ButtonPrimary';
 export * from './buttons/ButtonWarning';
+export * from './buttons/ButtonHeaderBack'
+export * from './buttons/ButtonHeaderOpenSideMenu';
+export * from './menus/SideMenu';
 export * from './Card';
 export * from './Item';
 export * from './ItemChoice';
