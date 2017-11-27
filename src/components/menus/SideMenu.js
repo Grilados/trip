@@ -74,11 +74,20 @@ const SideMenu = DrawerNavigator({
         } 
     }
 }, {
-    drawerWidth: width-150,
-   // initialRouteName: 'Inicio',
+    drawerWidth: width-100,
+    drawerBackgroundColor: '#0E1419',
     contentOptions : {
-        activeTintColor: '#82B43F'
-    }
+        activeTintColor: '#F6BB27',
+        inactiveTintColor : '#FFFFFF',
+        itemStyle   : {
+            borderColor: '#576169',
+            borderBottomWidth: 0.5,
+            width: width-140,
+        }
+    },
+    
+
+
 });
 
 export { SideMenu };
