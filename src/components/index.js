@@ -11,3 +11,4 @@ export * from './ItemChoice';
 export * from './ListItem';
 export * from './Message';
 export * from './Search';
+export * from './User';
