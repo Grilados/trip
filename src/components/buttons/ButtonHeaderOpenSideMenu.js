@@ -1,16 +1,21 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ButtonHeaderOpenSideMenu = ({ navigation }) => (
-                                <View> 
-                                    <TouchableOpacity style={{ paddingLeft: 15 }} onPress={()=> {
-                                        navigation.navigate('DrawerOpen');
-                                     
-                                    }}>
-                                        <Icon  name="ios-menu-outline" color="#FFFFFF" size={27}/>
-                                    </TouchableOpacity> 
-                                </View>
-);
+class ButtonHeaderOpenSideMenu extends Component {
+    render() {
+        return(
+            <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
+                <Icon  name="ios-menu-outline" color="#FFFFFF" size={27}/>
+            </TouchableOpacity> 
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    button : {
+        paddingLeft: 15
+    }
+});
 
 export { ButtonHeaderOpenSideMenu };

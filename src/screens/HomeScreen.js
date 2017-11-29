@@ -7,16 +7,41 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
+import { SideMenu, ButtonHeaderOpenSideMenu } from '../components';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Drawer from 'react-native-drawer';
 
 const { width } = Dimensions.get('window');
 
 export default class HomeScreen extends Component {
+    static navigationOptions = {
+        headerLeft: <ButtonHeaderOpenSideMenu onClick={()=> this.openDrawer()} /> // navigation={navigation}
+    }
+
+    closeDrawer  ()  {
+        this._drawer.close();
+      };
+      openDrawer  () {
+        this._drawer.open();
+      };
+
     render() {
+        
         const { navigate } = this.props.navigation;
         return(
             <View style={styles.container}>
-                <StatusBar backgroundColor='#7EB239' />
+                <StatusBar backgroundColor='#7EB239' />   
+                <Drawer
+                    type="displace"
+                    ref={(ref) => { this._drawer = ref; }}
+                    content={<View style={{backgroundColor: "blue", height: 1000}}/>}
+                    onClose={this.closeDrawer.bind(this)}
+                    onOpen={this.openDrawer.bind(this)}
+                    panOpenMask={0.80}
+                    captureGestures="open"
+                > 
+                </Drawer>
+
                 <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
                     <View style={styles.iconItem}>
                         <Icon  name="ios-albums" color="#7EB239" size={85}/>

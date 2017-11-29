@@ -1,7 +1,6 @@
 import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { View, Text, TouchableOpacity, BackHandler } from 'react-native';
-import { SideMenu, ButtonHeaderOpenSideMenu } from '../components';
 
 // Screens
 import HomeScreen from '../screens/HomeScreen';
@@ -18,7 +17,7 @@ import PromCupoTabScreen from '../screens/PromCupoTabScreen';
 
 export const Routes = StackNavigator({
     Inicio : { 
-        screen: SideMenu,
+        screen: HomeScreen,
     },
     // Noticias : { 
     //     screen: NoticiasScreen,
@@ -61,8 +60,7 @@ export const Routes = StackNavigator({
 }, {
     initialRouteName: 'Inicio',
     navigationOptions: ({ navigation }) => ({
-        headerStyle: { backgroundColor: '#7EB239', elevation: 0 },
-        headerLeft: <ButtonHeaderOpenSideMenu navigation={navigation} />  
+        headerStyle: { backgroundColor: '#7EB239', elevation: 0 }
     })
 }); 
 
