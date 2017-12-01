@@ -21,42 +21,44 @@ export default class HomeScreen extends Component {
                 <StatusBar backgroundColor='#7EB239' />
                 <Header openSideMenu={()=>navigate("DrawerOpen")} />
 
-                <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
-                    <View style={styles.iconItem}>
-                        <Icon  name="ios-albums" color="#7EB239" size={85}/>
-                    </View>
-                    <View style={styles.infoItem}>
-                        <Text style={styles.titleItem}>Pontos turísticos</Text>
-                        <Text style={styles.contentItem}>Conheça os pontos turísticos que a cidade oferece</Text>
-                    </View>
-                    <View>
-                        <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.item} onPress={()=>navigate('OndeDormir')}>
-                    <View style={styles.iconItem}>
-                        <Icon  name="ios-albums" color="#7EB239" size={85}/>
-                    </View>
-                    <View style={styles.infoItem}>
-                        <Text style={styles.titleItem}>Onde Dormir</Text>
-                        <Text style={styles.contentItem}>Descubra a melhor opção de estadia na cidade</Text>
-                    </View>
-                    <View>
-                        <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.item} onPress={()=>navigate('Comercios')}>
-                    <View style={styles.iconItem}>
-                        <Icon  name="ios-albums" color="#7EB239" size={85}/>
-                    </View>
-                    <View style={styles.infoItem}>
-                        <Text style={styles.titleItem}>Comércios</Text>
-                        <Text style={styles.contentItem}>Encontre comércios e serviços mais próximos</Text>
-                    </View>
-                    <View>
-                        <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
-                    </View>
-                </TouchableOpacity>
+                <View style={styles.content}>
+                    <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
+                        <View style={styles.iconItem}>
+                            <Icon  name="ios-albums" color="#7EB239" size={85}/>
+                        </View>
+                        <View style={styles.infoItem}>
+                            <Text style={styles.titleItem}>Pontos turísticos</Text>
+                            <Text style={styles.contentItem}>Conheça os pontos turísticos que a cidade oferece</Text>
+                        </View>
+                        <View>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.item} onPress={()=>navigate('OndeDormir')}>
+                        <View style={styles.iconItem}>
+                            <Icon  name="ios-albums" color="#7EB239" size={85}/>
+                        </View>
+                        <View style={styles.infoItem}>
+                            <Text style={styles.titleItem}>Onde Dormir</Text>
+                            <Text style={styles.contentItem}>Descubra a melhor opção de estadia na cidade</Text>
+                        </View>
+                        <View>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.item} onPress={()=>navigate('Comercios')}>
+                        <View style={styles.iconItem}>
+                            <Icon  name="ios-albums" color="#7EB239" size={85}/>
+                        </View>
+                        <View style={styles.infoItem}>
+                            <Text style={styles.titleItem}>Comércios</Text>
+                            <Text style={styles.contentItem}>Encontre comércios e serviços mais próximos</Text>
+                        </View>
+                        <View>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
@@ -68,6 +70,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FFFFFF'
+    },
+    content : {
+        marginTop: 60,
     },
     item : {
         flexDirection: 'row',

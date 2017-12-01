@@ -27,7 +27,7 @@ class Card extends Component {
                     <View style={styles.itemInfo}>
                         <Text style={styles.title} numerOfLines={1}>Starbucks</Text>
                         <Text style={styles.content} numerOfLines={2}>Promoção imperdível, compre um e leve outro, confira!</Text>
-                        <Text style={styles.contentTwo} numerOfLines={3}>Compre 1 Cookies & Cream Frappuccino e leve outro grátis. Promoção válida de segunda a quarta até as 12:00h.</Text>
+                        {/* <Text style={styles.contentTwo} numerOfLines={3}>Compre 1 Cookies & Cream Frappuccino e leve outro grátis. Promoção válida de segunda a quarta até as 12:00h.</Text> */}
                     </View>
                 </View>
             </View>
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     },
     contentTwo : {
         marginTop: 10,
+        marginLeft: 10,
         paddingBottom: 15,
         color: '#7EB239',
         fontSize: 22   
