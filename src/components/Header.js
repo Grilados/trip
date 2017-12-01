@@ -6,6 +6,7 @@ import { View,
          StatusBar, 
          StyleSheet 
 } from 'react-native';
+import { ButtonHeaderOpenSideMenu } from './index';
 
 const { width } = Dimensions.get('window');
 
@@ -13,7 +14,9 @@ class Header extends Component {
     render() {
         return(
             <View style={styles.container}>
-                
+                <View style={styles.headerLeft}>
+                    <ButtonHeaderOpenSideMenu onClick={this.props.openSideMenu} />
+                </View>    
             </View>
         );
     }
@@ -24,7 +27,6 @@ export { Header };
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        alignItems: 'center',
         justifyContent: 'center',
         width,
         height: 60,
@@ -33,6 +35,9 @@ const styles = StyleSheet.create({
         right: 0,
         elevation: 0,
         backgroundColor: '#7EB239',
+    },
+    headerLeft : {
+       flexDirection: 'row'
     }
 });
 

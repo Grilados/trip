@@ -19,7 +19,7 @@ export default class HomeScreen extends Component {
         return(
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Header />
+                <Header openSideMenu={()=>navigate("DrawerOpen")}/>
 
                 <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
                     <View style={styles.iconItem}>
