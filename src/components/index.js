@@ -12,3 +12,4 @@ export * from './ListItem';
 export * from './Message';
 export * from './Search';
 export * from './User';
+export * from './Header';

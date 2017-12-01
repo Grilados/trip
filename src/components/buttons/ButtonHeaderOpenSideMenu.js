@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 class ButtonHeaderOpenSideMenu extends Component {
     render() {
         return(
-            <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
+            <TouchableOpacity style={styles.button} onPress={()=>this.props.onClick()}>
                 <Icon  name="ios-menu-outline" color="#FFFFFF" size={27}/>
             </TouchableOpacity> 
         );
