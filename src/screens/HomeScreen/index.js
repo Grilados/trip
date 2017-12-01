@@ -12,7 +12,7 @@ import ComerciosScreen from '../ComerciosScreen';
 const HomeScreenRouter = DrawerNavigator(
   {
  //   Promocoes: { screen: PromCupoTabScreen },
-    HomeScreen : { screen: HomeScreen },
+    Index : { screen: HomeScreen },
     PontosTuristicos: { screen: PontosTuristicosScreen },
     OndeDormir : { screen: OndeDormirScreen },
     Comercios: { screen: ComerciosScreen },

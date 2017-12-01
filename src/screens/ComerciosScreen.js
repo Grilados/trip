@@ -4,7 +4,8 @@ import { View,
          StatusBar,
          StyleSheet
 } from 'react-native';
-import { Search, 
+import { Header,
+        Search, 
          ListItem,
          Item,
          Message,
@@ -42,13 +43,17 @@ export default class ComerciosScreen extends Component {
         return(
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Search />
+                <Header />
+                
+                <View style={styles.content}>
+                    <Search />
 
-                <ListItem 
-                    itens={ITENS} 
-                    renderItem={(item)=> this._renderItem(item)}
-                    ListFooterComponent={()=>this._listFooterComponent()}
-                />
+                    <ListItem 
+                        itens={ITENS} 
+                        renderItem={(item)=> this._renderItem(item)}
+                        ListFooterComponent={()=>this._listFooterComponent()}
+                    />
+                </View>
             </View>
         );
     }
@@ -58,6 +63,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF'
+    },
+    content: {
+        marginTop: 60
     },
     listFooterComponent : {
         margin: 20,

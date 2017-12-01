@@ -6,7 +6,7 @@ import { View,
          StatusBar, 
          StyleSheet 
 } from 'react-native';
-import { ButtonHeaderOpenSideMenu } from './index';
+import { ButtonHeaderOpenSideMenu, ButtonHeaderBack } from './index';
 
 const { width } = Dimensions.get('window');
 
@@ -16,7 +16,7 @@ class Header extends Component {
             <View style={styles.container}>
                 <View style={styles.headerLeft}>
                     <ButtonHeaderOpenSideMenu onClick={this.props.openSideMenu} />
-                </View>    
+                </View>
             </View>
         );
     }
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         right: 0,
         elevation: 0,
         backgroundColor: '#7EB239',
+        zIndex: 2
     },
     headerLeft : {
        flexDirection: 'row'
