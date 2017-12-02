@@ -7,7 +7,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import { Header, FooterMenu } from "../../components";
+import { Header, Separator, FooterMenu } from "../../components";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
@@ -24,40 +24,48 @@ export default class HomeScreen extends Component {
                 <View style={styles.content}>
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-albums" color="#7EB239" size={85}/>
+                            <Icon  name="ios-cog-outline" color="#7EB239" size={85}/>
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Pontos turísticos</Text>
-                            <Text style={styles.contentItem}>Conheça os pontos turísticos que a cidade oferece</Text>
+                            <Text style={styles.contentItem}>Conheça os pontos que a cidade oferece</Text>
                         </View>
                         <View>
-                            <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35}/>
                         </View>
                     </TouchableOpacity>
+
+                    <Separator />
+
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('OndeDormir')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-albums" color="#7EB239" size={85}/>
+                            <Icon  name="ios-cog-outline" color="#7EB239" size={85}/>
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Onde Dormir</Text>
                             <Text style={styles.contentItem}>Descubra a melhor opção de estadia na cidade</Text>
                         </View>
                         <View>
-                            <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35}/>
                         </View>
                     </TouchableOpacity>
+
+                    <Separator />
+                    
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('Comercios')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-albums" color="#7EB239" size={85}/>
+                            <Icon  name="ios-cog-outline" color="#7EB239" size={85}/>
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Comércios</Text>
                             <Text style={styles.contentItem}>Encontre comércios e serviços mais próximos</Text>
                         </View>
                         <View>
-                            <Icon  name="ios-arrow-forward" color="#7EB239" size={50}/>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35}/>
                         </View>
                     </TouchableOpacity>
+
+                    <Separator />
                 </View>
 
                 <FooterMenu />
@@ -69,12 +77,11 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
     container : {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#FFFFFF'
     },
     content : {
-      //  marginTop: 30,
+        marginTop: 85,
+        alignItems: 'center'
     },
     item : {
         flexDirection: 'row',
@@ -87,15 +94,15 @@ const styles = StyleSheet.create({
     },
     infoItem : {
         flexDirection: 'column',
-        width: width-150,
+        width: width-160,
     },
     titleItem : {
-        fontSize: 23,
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#587D1C'
     },
     contentItem : {
-        fontSize: 18,
+        fontSize: 16,
         color: '#8D8D8D'
     }
 });

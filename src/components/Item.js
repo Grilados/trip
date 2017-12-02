@@ -116,7 +116,8 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     title : {
-        fontSize: 20, 
+        fontSize: 20,
+        lineHeight: 15, 
         color: '#0F0F0F',
         fontWeight: 'bold'
     },

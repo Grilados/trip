@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
-import {  User } from '../index';
 
 const { width, height } = Dimensions.get('window');
-
-const routes = ["Inicio", "Promocoes", "Comercios"];
 
 class FooterMenu extends Component { 
     render() {
@@ -41,7 +38,7 @@ const styles = StyleSheet.create({
     },
     info : {
         justifyContent: 'flex-start',
-        width: 220,
+        width: 240,
         marginRight: 10
     },
     title : {

@@ -4,6 +4,7 @@ import { View,
          Image,
          StyleSheet 
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 class User extends Component { 
@@ -11,7 +12,8 @@ class User extends Component {
         return( 
             <View style={styles.container}>
                 <View style={styles.image}>
-                    <Image source={require('../imgs/guest.png')} />
+                    {/* <Image source={require('../imgs/guest.png')} /> */}
+                    <Icon  name="ios-contact-outline" color="#FFFFFF" size={40}/>
                 </View>
                 <View style={styles.info}>
                     <Text style={styles.name}> Vitor Hugo Alves </Text> 
@@ -31,13 +33,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15
     },
     image : {
-        width: 35,
-        height: 35,
         marginRight: 10,
-        borderRadius: 50,
-        borderWidth: 2,
-        borderColor: '#FFFFFF',
-        backgroundColor: '#FFFFFF'
     },
     info : {
         flexDirection: 'column',
