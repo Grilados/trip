@@ -23,7 +23,7 @@ export default class ComerciosScreen extends Component {
         return(
             <View style={styles.listFooterComponent}>
                 <Message title="Cadastre-se" content="Receba promoções especiais direto em seu aplicativo"/>
-                <ButtonPrimary value="Continuar" />
+                <ButtonPrimary value="Continuar" onClick={()=>alert('click')}/>
             </View>
         );  
     }
@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
     },
     listFooterComponent : { 
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: 10,
+        paddingBottom: 35
     },
 
     containerStyle : {

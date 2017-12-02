@@ -71,7 +71,7 @@ const HomeScreenRouter = DrawerNavigator(
     }
   },
   {
-    initialRouteName: 'Comercios',
+    initialRouteName: 'Inicio',
     contentComponent: props => <SideMenu {...props} />,
     drawerBackgroundColor: 'transparent',
     contentOptions : {

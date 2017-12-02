@@ -24,10 +24,10 @@ export { Message };
 
 const styles = StyleSheet.create({
     container : {
-        width: width-30,
+        width: width-80,
         alignSelf: 'center',
         paddingTop: 10, 
-        paddingBottom: 10
+        paddingBottom: 20
     },
     
     info : {
@@ -36,12 +36,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     title : {
-        fontSize: 25,
+        fontSize: 23,
         fontWeight: 'bold',
         color: '#7EB239'
     },
     content : { 
         fontSize: 18,
+        textAlign: 'center',
         color: '#858585'
     }
 });

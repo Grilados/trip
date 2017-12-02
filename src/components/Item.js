@@ -106,8 +106,8 @@ const styles = StyleSheet.create({
     },
     km : {
         position: 'absolute',
-        top: 18,
-        right: 25
+        top: 20,
+        right: 20
     },
 
     image : {
@@ -116,14 +116,21 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     title : {
-        fontSize: 20,
-        lineHeight: 15, 
+        fontSize: 18,
+        lineHeight: 15,
+        paddingBottom: 3, 
         color: '#0F0F0F',
         fontWeight: 'bold'
     },
+    phone : {
+        fontSize: 14,
+        paddingBottom: 3,
+        fontWeight: '500',
+        color: '#000000'
+    },
     content : {
         color: '#858585',
-        fontSize: 16
+        fontSize: 14
     },
 
     txtMenu : {
