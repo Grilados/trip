@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, 
          Text,
          StatusBar,
+         Dimensions,
          StyleSheet
 } from 'react-native';
 import { Header,
@@ -14,6 +15,8 @@ import { Header,
 
 // Helpers 
 import { ITENS } from '../helpers/ComerciosHelper';
+
+const { height } = Dimensions.get('window');
 
 export default class ComerciosScreen extends Component {
     _listFooterComponent() {
@@ -53,6 +56,7 @@ export default class ComerciosScreen extends Component {
                         itens={ITENS} 
                         renderItem={(item)=> this._renderItem(item)}
                         ListFooterComponent={()=>this._listFooterComponent()}
+                        containerStyle={styles.containerStyle}
                     />
                 </View>
             </View>
@@ -68,9 +72,12 @@ const styles = StyleSheet.create({
     content: {
         marginTop: 60
     },
-    listFooterComponent : {
-        margin: 20,
+    listFooterComponent : { 
         justifyContent: 'center',
         alignItems: 'center'
+    },
+
+    containerStyle : {
+        height: height-135,    
     }
 });

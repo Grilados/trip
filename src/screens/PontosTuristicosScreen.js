@@ -3,9 +3,12 @@ import {
     View,
     Text,
     StatusBar,
+    Dimensions,
     StyleSheet
 } from 'react-native';
 import { Header, ItemChoice, ListItem, Item } from '../components';
+
+const { height } = Dimensions.get('window');
 
 // Helpers 
 import { ITENS } from '../helpers/PontosTuristicosHelper';
@@ -37,6 +40,7 @@ export default class PontosTuristicosScreen extends Component {
                     <ListItem 
                         itens={ITENS} 
                         renderItem={(item)=> this._renderItem(item)}
+                        containerStyle={styles.containerStyle}
                     />
                 </View>
             </View>
@@ -45,11 +49,14 @@ export default class PontosTuristicosScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+    container: {   
         backgroundColor: '#FFFFFF'
     },
     content: {
         marginTop: 60
+    },
+
+    containerStyle : {
+        height: height-135,    
     }
 });

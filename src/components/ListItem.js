@@ -1,5 +1,5 @@
 import React, { Component } from 'React';
-import { FlatList, RefreshControl } from 'react-native';
+import { View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 
 class ListItem extends Component {
     constructor(props) {
@@ -18,19 +18,21 @@ class ListItem extends Component {
 
     render() {
         return( 
-            <FlatList 
-                data={this.props.itens}
-                keyExtractor={item=>item.id}
-                renderItem={(item)=>this.props.renderItem(item)}
-                showsVerticalScrollIndicator={this.props.showsVerticalScrollIndicator}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={this.state.refreshing}
-                        onRefresh={()=>this._onRefresh()}
-                    />
-                }
-                ListFooterComponent={this.props.ListFooterComponent}
-            />
+            <View style={this.props.containerStyle}>
+                <FlatList 
+                    data={this.props.itens}
+                    keyExtractor={item=>item.id}
+                    renderItem={(item)=>this.props.renderItem(item)}
+                    showsVerticalScrollIndicator={this.props.showsVerticalScrollIndicator}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.refreshing}
+                            onRefresh={()=>this._onRefresh()}
+                        />
+                    }
+                    ListFooterComponent={this.props.ListFooterComponent}
+                />
+            </View>
         );
     }
 }
