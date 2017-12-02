@@ -5,6 +5,7 @@ export * from './buttons/ButtonWarning';
 export * from './buttons/ButtonHeaderBack'
 export * from './buttons/ButtonHeaderOpenSideMenu';
 export * from './menus/SideMenu';
+export * from './menus/FooterMenu';
 export * from './Card';
 export * from './Item';
 export * from './ItemChoice';

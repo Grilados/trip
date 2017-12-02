@@ -7,7 +7,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import { Header } from "../../components";
+import { Header, FooterMenu } from "../../components";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
@@ -59,6 +59,8 @@ export default class HomeScreen extends Component {
                         </View>
                     </TouchableOpacity>
                 </View>
+
+                <FooterMenu />
             </View>
         );
     }
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF'
     },
     content : {
-        marginTop: 60,
+      //  marginTop: 30,
     },
     item : {
         flexDirection: 'row',
