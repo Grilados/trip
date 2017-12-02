@@ -27,11 +27,12 @@ export { User };
 const styles = StyleSheet.create({
     container : {
         flexDirection: 'row',
+        alignItems: 'center',
         paddingVertical: 15
     },
     image : {
-        width: 50,
-        height: 50,
+        width: 35,
+        height: 35,
         marginRight: 10,
         borderRadius: 50,
         borderWidth: 2,
@@ -42,12 +43,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     name : {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 'bold',
         color: '#FFFFFF'
     },
     country : {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '100',
         color: '#FFFFFF' 
     }

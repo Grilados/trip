@@ -45,17 +45,17 @@ const styles = StyleSheet.create({
   },
   items : {
     width: width-150,
-    paddingVertical: 16,
+    paddingVertical: 14,
     paddingLeft: 20,
-    borderColor: '#576169',
+    borderColor: '#25303A',
     borderBottomWidth: 0.5,
   },
     inactiveTintColor : {
-    fontSize: 18,
+    fontSize: 16,
     color: '#FFFFFF'
   },
     activeTintColor : {
-    fontSize: 18,
+    fontSize: 16,
     color: '#F6BB27'
   },
   user : {
