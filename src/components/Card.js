@@ -7,6 +7,8 @@ import { View,
          StyleSheet 
 } from 'react-native';
 import { Badge } from 'react-native-elements';
+import { ButtonWarning } from './index';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
 
@@ -22,14 +24,26 @@ class Card extends Component {
                         containerStyle={{ backgroundColor: '#7EB239' }}
                     />
                 </View>
+                
                 <View style={styles.item}>
-                    <Image style={styles.itemImage} source={require('../imgs/starbucks.jpg')} />
-                    <View style={styles.itemInfo}>
-                        <Text style={styles.title} numerOfLines={1}>Starbucks</Text>
-                        <Text style={styles.content} numerOfLines={2}>Promoção imperdível, compre um e leve outro, confira!</Text>
-                        {/* <Text style={styles.contentTwo} numerOfLines={3}>Compre 1 Cookies & Cream Frappuccino e leve outro grátis. Promoção válida de segunda a quarta até as 12:00h.</Text> */}
+                    <View style={styles.info}>
+                        <Image style={styles.itemImage} source={require('../imgs/starbucks.jpg')} />
+                        <View style={styles.itemInfo}>
+                            <Text style={styles.title} numerOfLines={1}>Starbucks</Text>
+                            <Text style={styles.content} numerOfLines={2}>Promoção imperdível, compre um e leve outro, confira!</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.itemInfoTwo}>
+                        <Text style={styles.titleTwo} numerOfLines={3}>Compre 1 Cookies & Cream e leve outro grátis. Promoção válida de segunda a quarta até as 12:00h.</Text>             
+
+                        <View style={{ flexDirection: 'row', marginTop: 5 }}> 
+                            <Icon  name="ios-pin" color="#000000" size={12} containerStyle={{ marginBottom: 10 }} />
+                            <Text style={styles.contentTwo} numerOfLines={2}>R. Alameda Joaquim Eugênio de Lima, 1023 Jd. Paulista, São Paulo/SP</Text>
+                        </View>
                     </View>
                 </View>
+
             </View>
         );
     }
@@ -47,45 +61,56 @@ const styles = StyleSheet.create({
     },
     km : {
         position: 'absolute',
-        top: 18,
+        top: 10,
         elevation: 3,
-        right: 25
+        right: 10
     },
     item : {
-        flexDirection: 'row',
         width: width-40,
-        paddingTop: 15,
+        paddingTop: 10,
         paddingLeft: 10,
-        elevation: 3,
+        borderLeftWidth: 1,
+        borderRightWidth: 1,
+        borderBottomWidth: 1,
+        borderColor: '#CCCCCC',
         backgroundColor: '#FFFFFF'
     },
     itemImage : {
         width: 75,
         height: 75,
         marginRight: 10,
-        backgroundColor: 'red'
+    },
+    info : {
+        flexDirection: 'row',
     },
 
     itemInfo: {
         flexDirection: 'column',
-        justifyContent: 'flex-start',
-        width: 330,
+        width: 220,
         marginRight: 10
     },
     title : {
-        fontSize: 20, 
+        fontSize: 18, 
         color: '#0F0F0F',
         fontWeight: 'bold'
     },
     content : {
         color: '#858585',
-        fontSize: 18
+        fontSize: 14
+    },
+
+    itemInfoTwo : {
+        paddingLeft: 10,
+        paddingBottom: 10,  
+        width: 300,
+    },
+    titleTwo : {
+        color: '#7EB239',
+        fontSize: 18   
     },
     contentTwo : {
-        marginTop: 10,
-        marginLeft: 10,
-        paddingBottom: 15,
-        color: '#7EB239',
-        fontSize: 22   
+        marginLeft: 5,
+        color: '#858585',
+        fontSize: 14    
     }
 });

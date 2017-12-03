@@ -24,14 +24,14 @@ export default class HomeScreen extends Component {
                 <View style={styles.content}>
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-cog-outline" color="#7EB239" size={85}/>
+                            <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Pontos turísticos</Text>
                             <Text style={styles.contentItem}>Conheça os pontos que a cidade oferece</Text>
                         </View>
                         <View>
-                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35}/>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35} />
                         </View>
                     </TouchableOpacity>
 
@@ -39,7 +39,7 @@ export default class HomeScreen extends Component {
 
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('OndeDormir')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-cog-outline" color="#7EB239" size={85}/>
+                            <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Onde Dormir</Text>
@@ -54,14 +54,14 @@ export default class HomeScreen extends Component {
                     
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('Comercios')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-cog-outline" color="#7EB239" size={85}/>
+                            <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Comércios</Text>
                             <Text style={styles.contentItem}>Encontre comércios e serviços mais próximos</Text>
                         </View>
                         <View>
-                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35}/>
+                            <Icon  name="ios-arrow-forward" color="#7EB239" size={35} />
                         </View>
                     </TouchableOpacity>
 
