@@ -14,7 +14,7 @@ class ButtonHeaderOpenSideMenu extends Component {
 
 const styles = StyleSheet.create({
     button : {
-        paddingLeft: 15
+        paddingLeft: 20
     }
 });
 

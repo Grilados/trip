@@ -21,6 +21,7 @@ export default class PromocoesScreen extends Component {
             </View>
         );
     }
+    
 
     render() {
         return(
@@ -31,6 +32,8 @@ export default class PromocoesScreen extends Component {
                     itens={ITENS} 
                     renderItem={(item)=> this._renderItem(item)}
                     showsVerticalScrollIndicator={false}
+                    ListHeaderComponent={()=><View style={styles.separator} />}
+                    ListFooterComponent={()=><View style={styles.separator} />}
                 />
             </View>    
         );
@@ -43,7 +46,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#FFFFFF'
     },
+    separator : {
+        height: 10
+    },
     card : {
-        marginVertical: 15,
+        marginTop: 15,
+        marginBottom: 20,
     }
 }); 

@@ -37,13 +37,16 @@ class Card extends Component {
                     <View style={styles.itemInfoTwo}>
                         <Text style={styles.titleTwo} numerOfLines={3}>Compre 1 Cookies & Cream e leve outro grátis. Promoção válida de segunda a quarta até as 12:00h.</Text>             
 
-                        <View style={{ flexDirection: 'row', marginTop: 5 }}> 
-                            <Icon  name="ios-pin" color="#000000" size={12} containerStyle={{ marginBottom: 10 }} />
-                            <Text style={styles.contentTwo} numerOfLines={2}>R. Alameda Joaquim Eugênio de Lima, 1023 Jd. Paulista, São Paulo/SP</Text>
+                        <View style={styles.footer}> 
+                            <Text style={styles.contentTwo} numerOfLines={2}>
+                                <Icon  name="ios-pin" color="#000000" size={12} containerStyle={{ marginBottom: 10 }} />  R. Alameda Joaquim Eugênio de Lima, 1023 Jd. Paulista, São Paulo/SP        
+                            </Text>
                         </View>
                     </View>
                 </View>
-
+                <View style={styles.tools}>
+                    <ButtonWarning value="CUPOM" />
+                </View>
             </View>
         );
     }
@@ -109,8 +112,17 @@ const styles = StyleSheet.create({
         fontSize: 18   
     },
     contentTwo : {
-        marginLeft: 5,
+        paddingBottom: 20,
         color: '#858585',
-        fontSize: 14    
+        fontSize: 14
+    },
+
+    footer : {
+        marginTop: 5
+    },
+    tools: {
+        alignSelf: 'center',
+        position: 'absolute',
+        bottom: -15
     }
 });

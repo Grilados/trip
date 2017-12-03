@@ -5,7 +5,6 @@ import {
     Dimensions,
     StyleSheet
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
 
@@ -13,7 +12,6 @@ class ButtonWarning extends Component {
     render() {
         return(
             <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
-                <Icon  name="ios-checkmark-outline" color="#FFFFFF" size={18}/>
                 <Text style={styles.value}>{this.props.value}</Text>
             </TouchableOpacity>
         );

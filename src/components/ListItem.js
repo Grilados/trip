@@ -30,6 +30,7 @@ class ListItem extends Component {
                             onRefresh={()=>this._onRefresh()}
                         />
                     }
+                    ListHeaderComponent={this.props.ListHeaderComponent}
                     ListFooterComponent={this.props.ListFooterComponent}
                 />
             </View>
