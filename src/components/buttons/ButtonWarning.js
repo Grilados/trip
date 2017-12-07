@@ -5,15 +5,25 @@ import {
     Dimensions,
     StyleSheet
 } from 'react-native';
+import { Button } from 'react-native-elements';
 
 const { width } = Dimensions.get('window');
 
 class ButtonWarning extends Component {
     render() {
         return(
-            <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
-                <Text style={styles.value}>{this.props.value}</Text>
-            </TouchableOpacity>
+            // <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
+            //     <Text style={styles.value}>{this.props.value}</Text>
+            // </TouchableOpacity>
+            <Button 
+                containerViewStyle={styles.button} 
+                title={this.props.value} 
+                backgroundColor='#EFB126'
+                borderRadius={50}
+                buttonStyle={this.props.buttonStyle}
+                onPress={this.props.onClick}
+                fontSize={this.props.fontSize}
+            />
         );
     }
 }
@@ -23,13 +33,13 @@ export { ButtonWarning };
 const styles = StyleSheet.create({
     button : {
         width: width-250,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingVertical: 5,
-        paddingHorizontal: 10,
-        borderRadius: 50,
-        backgroundColor: '#EFB126'
+        // flexDirection: 'row',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // paddingVertical: 5,
+        // paddingHorizontal: 10,
+        // borderRadius: 50,
+        // backgroundColor: '#EFB126'
     },
     value : {
         fontSize: 16, 

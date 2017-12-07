@@ -40,6 +40,8 @@ export default class GerarCupomScreen extends Component {
                 <ListItem 
                     itens={ITENS} 
                     renderItem={(item)=> this._renderItem(item)}
+                    ListHeaderComponent={()=><View style={styles.separator} />}
+                    ListFooterComponent={()=><View style={styles.separator} />}
                 />
             </View>
         );
@@ -51,7 +53,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFFFFF'
     },
+    separator : {
+        height: 15
+    },
     item : {
-        marginTop: 20
+        marginTop: 10,
+        marginBottom: 5
     }
 }); 

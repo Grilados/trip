@@ -45,7 +45,7 @@ class Card extends Component {
                     </View>
                 </View>
                 <View style={styles.tools}>
-                    <ButtonWarning value="CUPOM" />
+                    <ButtonWarning buttonStyle={{ height: 30 }} value="CUPOM" />
                 </View>
             </View>
         );

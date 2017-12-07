@@ -61,7 +61,7 @@ class Item extends Component {
                         <View style={styles.couponOptions}>
                             <Text style={styles.cupomValidity}> Válido até 10/dez </Text>
                             <ButtonDelete  onClick={this.props.ButtonDeleteOnClick} value="Excluir" />
-                            <ButtonWarning  onClick={this.props.ButtonWarningOnClick} value="CÓDIGO" />
+                            <ButtonWarning  fontSize={10} buttonStyle={{ width: 90, height: 20 }} onClick={this.props.ButtonWarningOnClick} value="CÓDIGO" />
                         </View>
                     </View>
                 );
@@ -142,9 +142,8 @@ const styles = StyleSheet.create({
     couponContainer : {
         width: width-40,
         alignSelf: 'center',
-        elevation: 3,
-        borderColor: '#E6E6E6',
-        borderBottomWidth: 1,
+        borderColor: '#CCCCCC',
+        borderWidth: 1,
         backgroundColor: '#FFFFFF'
     },
     couponOptions : {
