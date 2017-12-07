@@ -4,7 +4,7 @@ import { View,
          StatusBar, 
          StyleSheet 
 } from 'react-native';
-import { Card, ListItem } from '../components';
+import { Card, List } from '../components';
 
 // Helpers 
 import { ITENS } from '../helpers/PromocoesHelper';
@@ -28,7 +28,7 @@ export default class PromocoesScreen extends Component {
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
 
-                <ListItem 
+                <List 
                     itens={ITENS} 
                     renderItem={(item)=> this._renderItem(item)}
                     showsVerticalScrollIndicator={false}

@@ -8,7 +8,7 @@ import CuponsScreen from '../screens/CuponsScreen';
 
 // Tabs
 export const Tab = TabNavigator({
-    Promocoes: { screen: PromocoesScreen },
+   // Promocoes: { screen: PromocoesScreen },
     Cupons: { screen: CuponsScreen }
 }, {
     tabBarPosition: 'top',

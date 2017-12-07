@@ -6,7 +6,7 @@ import {
     Dimensions,
     StyleSheet
 } from 'react-native';
-import { Header, ItemChoice, ListItem, Item } from '../components';
+import { Header, ItemChoice, List, ItemPlace } from '../components';
 
 const { height } = Dimensions.get('window');
 
@@ -17,11 +17,10 @@ export default class PontosTuristicosScreen extends Component {
     _renderItem({item}) {
         return(  
             <View>               
-                <Item 
+                <ItemPlace
                     image={item.image}
                     title={item.title}
                     content={item.content} 
-                    layout="places"
                 />  
             </View>
         );
@@ -37,7 +36,7 @@ export default class PontosTuristicosScreen extends Component {
                 <View style={styles.content}>
                     <ItemChoice choice="Cachoeiras" />
 
-                    <ListItem 
+                    <List 
                         itens={ITENS} 
                         renderItem={(item)=> this._renderItem(item)}
                         containerStyle={styles.containerStyle}

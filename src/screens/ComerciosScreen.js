@@ -7,8 +7,8 @@ import { View,
 } from 'react-native';
 import { Header,
         Search, 
-         ListItem,
-         Item,
+         List,
+         ItemTrade,
          Message,
          ButtonPrimary   
 } from '../components';
@@ -31,12 +31,11 @@ export default class ComerciosScreen extends Component {
     _renderItem({item}) {
         return(  
             <View>
-                <Item 
+                <ItemTrade
                     image={item.image}
                     title={item.title}
                     phone={item.phone}
                     content={item.content} 
-                    layout="trade"
                 />  
             </View>
         );
@@ -52,7 +51,7 @@ export default class ComerciosScreen extends Component {
                 <View style={styles.content}>
                     <Search />
 
-                    <ListItem 
+                    <List 
                         itens={ITENS} 
                         renderItem={(item)=> this._renderItem(item)}
                         ListFooterComponent={()=>this._listFooterComponent()}

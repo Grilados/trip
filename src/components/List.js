@@ -1,7 +1,7 @@
 import React, { Component } from 'React';
 import { View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 
-class ListItem extends Component {
+class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38,4 +38,4 @@ class ListItem extends Component {
     }
 }
 
-export { ListItem };
+export { List };

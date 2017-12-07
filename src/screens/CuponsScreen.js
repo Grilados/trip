@@ -6,7 +6,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import { ListItem, Item } from '../components';
+import { List, ItemCoupon } from '../components';
 
 // Helpers 
 import { ITENS } from '../helpers/CuponsHelper';
@@ -20,11 +20,10 @@ export default class GerarCupomScreen extends Component {
         const { navigate } = this.props.navigation;
         return(  
             <View style={styles.item}>
-                <Item 
+                <ItemCoupon
                     image={item.image}
                     title={item.title}
                     content={item.content} 
-                    layout="coupon"
                     ButtonDeleteOnClick={()=>alert('delete')}
                     ButtonWarningOnClick={()=>navigate('GerarCupom')}
                 />
@@ -37,7 +36,7 @@ export default class GerarCupomScreen extends Component {
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
                      
-                <ListItem 
+                <List 
                     itens={ITENS} 
                     renderItem={(item)=> this._renderItem(item)}
                     ListHeaderComponent={()=><View style={styles.separator} />}

@@ -8,7 +8,7 @@ import { View,
 } from 'react-native';
 import { Badge } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { ButtonWarning, ButtonDelete } from './index';
+import { ButtonWarning, ButtonDelete } from '../index';
 
 const { width } = Dimensions.get('window');
 

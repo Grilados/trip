@@ -6,7 +6,7 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import { Item, ButtonWarning, ButtonCancel } from '../components';
+import { ItemCouponSimple, ButtonWarning, ButtonCancel } from '../components';
 
 export default class GerarCupomScreen extends Component {   
     render() {
@@ -14,11 +14,10 @@ export default class GerarCupomScreen extends Component {
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
                 
-                <Item 
+                <ItemCouponSimple
                     image={require('../imgs/starbucks.jpg')}
                     title="Starbucks"
                     content="Promoção imperdível, compre um e leve outro, confira!" 
-                    layout="couponTwo"
                 />
 
                 <View style={styles.contentContainer}>
