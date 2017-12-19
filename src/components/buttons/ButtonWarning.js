@@ -11,7 +11,7 @@ const { width } = Dimensions.get('window');
 class ButtonWarning extends Component {
     render() {
         return(
-            <TouchableOpacity style={[styles.button, this.props.containerStyle]} onPress={this.props.onClick}>
+            <TouchableOpacity activeOpacity={0.8} style={[styles.button, this.props.containerStyle]} onPress={this.props.onClick}>
                 <Text style={[styles.value, {fontSize: this.props.fontSize}]}>{this.props.value}</Text>
             </TouchableOpacity>
         );

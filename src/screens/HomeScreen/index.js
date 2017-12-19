@@ -21,18 +21,18 @@ const HomeScreenRouter = DrawerNavigator(
             drawerLabel: 'Início' 
         }
     },
-    Noticias : { 
-        screen: NoticiasScreen,
-        navigationOptions : {
-            drawerLabel: 'Notícias' 
-        }
-    },
-    Eventos : { 
-        screen: EventosScreen,
-        navigationOptions : {
-            drawerLabel: 'Eventos' 
-        }
-    },
+    // Noticias : { 
+    //     screen: NoticiasScreen,
+    //     navigationOptions : {
+    //         drawerLabel: 'Notícias' 
+    //     }
+    // },
+    // Eventos : { 
+    //     screen: EventosScreen,
+    //     navigationOptions : {
+    //         drawerLabel: 'Eventos' 
+    //     }
+    // },
     Promocoes : { 
         screen: PromCupoTabScreen,
         navigationOptions : {
@@ -45,24 +45,24 @@ const HomeScreenRouter = DrawerNavigator(
             drawerLabel: 'Pontos Turísticos' 
         }
     },
-    OndeDormir : { 
-        screen: OndeDormirScreen,
-        navigationOptions : {
-            drawerLabel: 'Onde Dormir' 
-        } 
-    },
+    // OndeDormir : { 
+    //     screen: OndeDormirScreen,
+    //     navigationOptions : {
+    //         drawerLabel: 'Onde Dormir' 
+    //     } 
+    // },
     Comercios: { 
         screen: ComerciosScreen,
         navigationOptions : {
             drawerLabel: 'Comércios' 
         } 
     },
-    SobreAjuda: { 
-        screen: SobreAjudaScreen,
-        navigationOptions : {
-            drawerLabel: 'Sobre e Ajuda' 
-        } 
-    },
+    // SobreAjuda: { 
+    //     screen: SobreAjudaScreen,
+    //     navigationOptions : {
+    //         drawerLabel: 'Sobre e Ajuda' 
+    //     } 
+    // },
     ExitApp : {
         screen: ()=> BackHandler.exitApp(),
         navigationOptions : {
@@ -71,7 +71,7 @@ const HomeScreenRouter = DrawerNavigator(
     }
   },
   {
-    initialRouteName: 'Promocoes',
+    initialRouteName: 'PontosTuristicos',
     contentComponent: props => <SideMenu {...props} />,
     drawerBackgroundColor: 'transparent',
     contentOptions : {
