@@ -25,7 +25,7 @@ class ItemCoupon extends Component {
                     <Text style={styles.validity}> Válido até 10/dez </Text> 
                     <View style={styles.buttons}>
                         <ButtonDelete value="EXCLUIR" />
-                        <ButtonWarning value="CÓDIGO" />
+                        <ButtonWarning onClick={this.props.ButtonWarningOnClick} value="CÓDIGO" />
                     </View>
                 </View>     
             </View>

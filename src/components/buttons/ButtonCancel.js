@@ -12,7 +12,7 @@ class ButtonCancel extends Component {
     render() {
         return(
             <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
-                <Text style={styles.value}>{this.props.value}</Text>
+                <Text style={[styles.value, {fontSize: this.props.fontSize}]}>{this.props.value}</Text>
             </TouchableOpacity>
         );
     }
@@ -22,18 +22,15 @@ export { ButtonCancel };
 
 const styles = StyleSheet.create({
     button : {
-        width: width-250,
-        flexDirection: 'row',
-        justifyContent: 'center',
+        width: 80, 
+        height: 25,
+        justifyContent: 'center', 
         alignItems: 'center',
-        paddingVertical: 5,
-        paddingHorizontal: 10,
         borderRadius: 50,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF' 
     },
     value : {
-        fontSize: 16, 
-        marginLeft: 5,
-        color: '#C8C9CA'
+        fontSize: 12, 
+        color: '#777981'
     }
 });

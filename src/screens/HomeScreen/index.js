@@ -5,7 +5,7 @@ import { DrawerNavigator } from "react-navigation";
 
 // Screens
 import NoticiasScreen from '../NoticiasScreen';
-import EventosScreen from '..//EventosScreen';
+import EventosScreen from '../EventosScreen';
 import HomeScreen from './HomeScreen';
 import PromCupoTabScreen from '../PromCupoTabScreen';
 import PontosTuristicosScreen from '../PontosTuristicosScreen';

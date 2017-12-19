@@ -30,3 +30,4 @@ export * from './Search';
 export * from './Separator';
 export * from './User';
 export * from './Header';
+export * from './GerarCupom';

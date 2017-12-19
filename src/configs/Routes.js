@@ -4,7 +4,6 @@ import { TabNavigator } from 'react-navigation';
 // Screens
 import PromocoesScreen from '../screens/PromocoesScreen';
 import CuponsScreen from '../screens/CuponsScreen';
-// import GerarCupomScreen from '../screens/GerarCupomScreen';
 
 // Tabs
 export const Tab = TabNavigator({

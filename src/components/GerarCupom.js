@@ -6,9 +6,9 @@ import {
     StatusBar,
     StyleSheet
 } from 'react-native';
-import { ItemCouponSimple, ButtonWarning, ButtonCancel } from '../components';
+import { ItemCouponSimple, ButtonWarning, ButtonCancel } from './index';
 
-export default class GerarCupomScreen extends Component {   
+class GerarCupom extends Component {   
     render() {
         return(
             <View style={styles.container}>
@@ -23,13 +23,23 @@ export default class GerarCupomScreen extends Component {
                 <View style={styles.contentContainer}>
                     <Image style={styles.image} source={require('../imgs/starbucks.jpg')} />
                     <Text style={styles.title}> Gerar Cupom </Text>
-                    <Text style={styles.content}> Tem certeza que deseja salvar este cupom ? </Text>
+                    <Text style={styles.content}>Tem certeza que deseja salvar este cupom ?</Text>
                     
                     <View style={styles.button}>
-                        <ButtonWarning  value="SALVAR" />
+                        <ButtonWarning  
+                            fontSize={16}
+                            containerStyle={{ width: 90, height: 30 }}
+                            value="SALVAR" 
+                            onClick={this.props.save}
+                        />
                     </View>
                     <View style={styles.button}>
-                        <ButtonCancel style={styles.button} value="CANCELAR" />
+                        <ButtonCancel 
+                            style={styles.button} 
+                            fontSize={12}
+                            value="CANCELAR" 
+                            onClick={this.props.cancel}
+                        />
                     </View>
                 </View>
             </View>
@@ -37,31 +47,37 @@ export default class GerarCupomScreen extends Component {
     }
 }
 
+export { GerarCupom };
+
 const styles = StyleSheet.create({
     container : {
         flex: 1,
         backgroundColor: '#FFFFFF'
     },
     contentContainer : {
-        marginTop: 50,
+        marginTop: 100,
         justifyContent: 'center',
         alignItems: 'center',
     },
     image : {
-        width: 130,
-        height: 130,   
-        borderRadius: 50 
+        width: 110,
+        height: 110,   
+        borderRadius: 50,
+        marginBottom: 10
     },
     title : {
-        fontSize: 25,
+        fontSize: 22,
         fontWeight: 'bold',
         color: '#000000'
     },
     content : {
-        fontSize: 18,
-        color: '#000000'    
+        width: 280,
+        fontSize: 20,
+        textAlign: 'center',
+        color: '#555964',
+        marginBottom: 15
     },
     button : {
-        marginTop: 10
+        marginTop: 15
     }
 }); 

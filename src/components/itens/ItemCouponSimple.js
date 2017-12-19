@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width,
         padding: 10,
-        elevation: 3,
+        elevation: 2,
         backgroundColor: '#FFFFFF'
     },
     title : {
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
         fontSize: 14
     }, 
     image : {
-        width: 75,
-        height: 75,
+        width: 55,
+        height: 55,
         marginRight: 10    
     },
     info: {
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     icon : {
-        marginRight: 20  
+        marginLeft: 20  
     }
 }); 

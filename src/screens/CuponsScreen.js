@@ -4,17 +4,44 @@ import {
     Text,
     Image,
     StatusBar,
+    Modal,
+    Dimensions,
     StyleSheet
 } from 'react-native';
-import { List, ItemCoupon } from '../components';
+import { List, ItemCoupon, GerarCupom } from '../components';
+
+const { width, height } = Dimensions.get('window');
 
 // Helpers 
 import { ITENS } from '../helpers/CuponsHelper';
 
-export default class GerarCupomScreen extends Component {   
+export default class CuponsScreen extends Component {   
+    constructor(props) {
+        super(props);
+        this.state = {
+            openModal: false
+        }
+    }
     static navigationOptions = {
         tabBarLabel: 'Cupons',
     };
+
+    renderGerarCupom() {
+        return(
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={this.state.openModal}
+                onRequestClose={()=>this.setState({openModal: false})}>
+                    <View style={styles.modal}>
+                        <GerarCupom 
+                            save={()=>this.setState({openModal: false})}
+                            cancel={()=>this.setState({openModal: false})}
+                        />
+                    </View>
+            </Modal>
+        );
+    }
 
     _renderItem({item}) {
         const { navigate } = this.props.navigation;
@@ -25,7 +52,7 @@ export default class GerarCupomScreen extends Component {
                     title={item.title}
                     content={item.content} 
                     ButtonDeleteOnClick={()=>alert('delete')}
-                    ButtonWarningOnClick={()=>navigate('GerarCupom')}
+                    ButtonWarningOnClick={()=>this.setState({openModal: true})}
                 />
             </View>
         );
@@ -42,6 +69,8 @@ export default class GerarCupomScreen extends Component {
                     ListHeaderComponent={()=><View style={styles.separator} />}
                     ListFooterComponent={()=><View style={styles.separator} />}
                 />
+
+                {this.renderGerarCupom()}
             </View>
         );
     }
@@ -58,5 +87,10 @@ const styles = StyleSheet.create({
     item : {
         marginTop: 10,
         marginBottom: 5
+    },
+    modal : {
+        width,
+        height,
+        backgroundColor: 'red'
     }
 }); 
