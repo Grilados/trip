@@ -2,26 +2,35 @@ import React, { Component } from 'react';
 import {
     Text,
     TouchableOpacity,
-    Dimensions
+    Dimensions,
+    StyleSheet
 } from 'react-native';
-import { Button } from 'react-native-elements';
 
 const { width } = Dimensions.get('window');
 
 class ButtonDelete extends Component {
     render() {
         return(
-            <Button 
-                title={this.props.value} 
-                backgroundColor='#FFFFFF'
-                textStyle={{ color: '#777981' }}
-                borderRadius={50}
-                buttonStyle={this.props.buttonStyle}
-                onPress={this.props.onClick}
-                fontSize={this.props.fontSize}
-            />
+            <TouchableOpacity style={styles.button} onPress={this.props.onClick}>
+                <Text style={styles.value}>{this.props.value}</Text>
+            </TouchableOpacity>
         );
     }
 }
 
 export { ButtonDelete };
+
+const styles = StyleSheet.create({
+    button : {
+        width: 80, 
+        height: 25,
+        justifyContent: 'center', 
+        alignItems: 'center',
+        borderRadius: 50,
+        backgroundColor: '#FFFFFF'   
+    },
+    value : {
+        fontSize: 12, 
+        color: '#777981'
+    }
+});

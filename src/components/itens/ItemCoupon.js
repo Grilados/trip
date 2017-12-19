@@ -19,23 +19,15 @@ class ItemCoupon extends Component {
                         <Text style={styles.title} numerOfLines={1}>{this.props.title}</Text>
                         <Text style={styles.content} numerOfLines={2}>{this.props.content}</Text>
                     </View>
-                </View>
-                
-                <View style={styles.options}>   
-                    <Text style={styles.validity}> Válido até 10/dez </Text>
-                    <ButtonDelete 
-                        fontSize={12} 
-                        buttonStyle={{ width: 80, backgroundColor: 'red' }} 
-                        onClick={this.props.ButtonDeleteOnClick} 
-                        value="EXCLUIR" 
-                    />
-                    <ButtonWarning 
-                        fontSize={12} 
-                        buttonStyle={{ width: 90, height: 20 }} 
-                        onClick={this.props.ButtonWarningOnClick} 
-                        value="CÓDIGO" 
-                    />  
-                </View>
+                </View>      
+
+                <View style={styles.footer}>        
+                    <Text style={styles.validity}> Válido até 10/dez </Text> 
+                    <View style={styles.buttons}>
+                        <ButtonDelete value="EXCLUIR" />
+                        <ButtonWarning value="CÓDIGO" />
+                    </View>
+                </View>     
             </View>
         );
     }
@@ -55,7 +47,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: 220,
-        marginLeft: 10
+        marginLeft: 10,
+        marginRight: 10
     },
     title : {
         fontSize: 18,
@@ -79,9 +72,21 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginRight: 10
     },
+    footer : {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight: 10,
+        marginBottom: 10
+    },
+    buttons : {
+        flex: 2,
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
+    },
     validity : {
+        flex: 1,
         color: '#EFB126',
         fontSize: 12,
-        marginLeft: 3
+        marginLeft: 10
     }
 }); 
