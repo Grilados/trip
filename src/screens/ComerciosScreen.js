@@ -32,14 +32,16 @@ export default class ComerciosScreen extends Component {
     _renderItem({item}) {
         const { navigate } = this.props.navigation;
         return(  
-            <TouchableOpacity onPress={()=>navigate("Comercio", { item })}>
-                <ItemTrade
-                    image={item.image}
-                    title={item.title}
-                    phone={item.phone}
-                    content={item.content} 
-                />  
-            </TouchableOpacity>
+            <View style={styles.itemContainer}>
+                <TouchableOpacity onPress={()=>navigate("Comercio", { item })}>
+                    <ItemTrade
+                        image={item.image}
+                        title={item.title}
+                        phone={item.phone}
+                        content={item.content} 
+                    />  
+                </TouchableOpacity>
+            </View>
         );
     }
 
@@ -72,6 +74,10 @@ const styles = StyleSheet.create({
     },
     content: {
         marginTop: 60
+    },
+    itemContainer : {
+        borderColor: '#E6E6E6',
+        borderBottomWidth: 1
     },
     listFooterComponent : { 
         justifyContent: 'center',
