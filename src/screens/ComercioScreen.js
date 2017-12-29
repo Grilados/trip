@@ -7,6 +7,7 @@ import { View,
          StyleSheet
 } from 'react-native';
 import { Header, ItemTrade, Message, ButtonPrimary } from '../components';
+import MapView from 'react-native-maps';
 
 const { width } = Dimensions.get('window');
 
@@ -30,14 +31,14 @@ export default class ComercioScreen extends Component {
 
                     <View style={styles.contact}>
                         <Text style={styles.contactTitle}>Contato</Text>
-                        <Text style={styles.contactPhone}>(19) 1000-20000 / (19) 2000-3000</Text>
-                        <Text style={styles.contactEmail}>conato@kfcbrasil.com.br</Text>
+                        <Text style={styles.contactPhone}>{params.item.phoneComplete}</Text>
+                        <Text style={styles.contactEmail}>{params.item.email}</Text>
                     </View> 
 
                     <View style={styles.operating}>
                         <Text style={styles.operatingTitle}>Horário de funcionamento</Text>
-                        <Text style={styles.operatingInfo}>Seg - Sex 08:30h as 19:00h</Text>
-                        <Text style={styles.operatingInfo}>Sab 08:30h as 17:00h</Text>
+                        <Text style={styles.operatingInfo}>{params.item.operating.operatingOne}</Text>
+                        <Text style={styles.operatingInfo}>{params.item.operating.operatingTwo}</Text>
                     </View> 
 
                     <View style={styles.activePromotions}>
@@ -48,7 +49,16 @@ export default class ComercioScreen extends Component {
 
                 <View style={styles.footer}>
                     <View style={styles.map}>
-
+                        <MapView
+                            style={styles.map}
+                            region={{ 
+                                latitude: 37.78825, 
+                                longitude: -122.4324, 
+                                latitudeDelta: 0.015, 
+                                longitudeDelta: 0.0121 
+                            }}>
+                            <MapView.Marker coordinate={{latitude: 37.78825, longitude: -122.4324 }} />
+                        </MapView>
                     </View>
                     <View style={styles.traceRoute}>
                         <TouchableOpacity onPress={()=>alert('Traçar Rota')}>
@@ -122,8 +132,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     map : {
-        flex: 1,
-        backgroundColor: 'red'
+        flex: 1
     },
     traceRoute : {
         flex: 1,
