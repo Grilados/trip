@@ -44,7 +44,6 @@ export default class CuponsScreen extends Component {
     }
 
     _renderItem({item}) {
-        const { navigate } = this.props.navigation;
         return(  
             <View style={styles.item}>
                 <ItemCoupon

@@ -11,6 +11,7 @@ import PromCupoTabScreen from '../PromCupoTabScreen';
 import PontosTuristicosScreen from '../PontosTuristicosScreen';
 import OndeDormirScreen from '../OndeDormirScreen';
 import ComerciosScreen from '../ComerciosScreen';
+import ComercioScreen from '../ComercioScreen';
 import SobreAjudaScreen from '../SobreAjudaScreen';
 
 const HomeScreenRouter = DrawerNavigator(
@@ -57,6 +58,12 @@ const HomeScreenRouter = DrawerNavigator(
             drawerLabel: 'Comércios' 
         } 
     },
+    Comercio: { 
+        screen: ComercioScreen,
+        navigationOptions : {
+            drawerLabel: null 
+        } 
+    },
     // SobreAjuda: { 
     //     screen: SobreAjudaScreen,
     //     navigationOptions : {
@@ -72,7 +79,7 @@ const HomeScreenRouter = DrawerNavigator(
   },
   {
     initialRouteName: 'Inicio',
-    contentComponent: props => <SideMenu {...props} />,
+    contentComponent: props=> <SideMenu {...props} />, 
     drawerBackgroundColor: 'transparent',
     contentOptions : {
         activeBackgroundColor: 'transparent'

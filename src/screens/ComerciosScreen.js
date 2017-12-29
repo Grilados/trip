@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, 
          Text,
+         TouchableOpacity,
          StatusBar,
          Dimensions,
          StyleSheet
@@ -29,24 +30,25 @@ export default class ComerciosScreen extends Component {
     }
 
     _renderItem({item}) {
+        const { navigate } = this.props.navigation;
         return(  
-            <View>
+            <TouchableOpacity onPress={()=>navigate("Comercio", { item })}>
                 <ItemTrade
                     image={item.image}
                     title={item.title}
                     phone={item.phone}
                     content={item.content} 
                 />  
-            </View>
+            </TouchableOpacity>
         );
     }
 
     render() {
-        const { navigate } = this.props.navigation;
+        const { navigate, goBack } = this.props.navigation;
         return(
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Header openSideMenu={()=>navigate("DrawerOpen")} />
+                <Header onClick={()=>goBack()} />
                 
                 <View style={styles.content}>
                     <Search />

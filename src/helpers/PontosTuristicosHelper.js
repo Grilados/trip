@@ -12,7 +12,7 @@ const CHOICES = [
     {id: 2, name: 'Horto Florestal'},
     {id: 3, name: 'Parque'},
     {id: 4, name: 'Praia'},
-    {id: 5, name: 'Zoológico'},
+    {id: 5, name: 'Zoológico'}
 ];
 
 export {ITENS, CHOICES};

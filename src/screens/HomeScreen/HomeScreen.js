@@ -19,7 +19,7 @@ export default class HomeScreen extends Component {
         return(
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Header openSideMenu={()=>navigate("DrawerOpen")} />
+                <Header openSideMenu={true} onClick={()=>navigate("DrawerOpen")} />
 
                 <View style={styles.content}>
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
@@ -37,13 +37,13 @@ export default class HomeScreen extends Component {
 
                     <Separator />
 
-                    <TouchableOpacity style={styles.item} onPress={()=>navigate('OndeDormir')}>
+                    <TouchableOpacity style={styles.item} onPress={()=>navigate('Promocoes')}>
                         <View style={styles.iconItem}>
                             <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
                         </View>
                         <View style={styles.infoItem}>
-                            <Text style={styles.titleItem}>Onde Dormir</Text>
-                            <Text style={styles.contentItem}>Descubra a melhor opção de estadia na cidade</Text>
+                            <Text style={styles.titleItem}>Promoções</Text>
+                            <Text style={styles.contentItem}>Conheça as promoções que as lojas podem ter</Text>
                         </View>
                         <View>
                             <Icon  name="ios-arrow-forward" color="#7EB239" size={35}/>
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     infoItem : {
         flexDirection: 'column',
         width: width-160,
+        marginRight: 10
     },
     titleItem : {
         fontSize: 20,

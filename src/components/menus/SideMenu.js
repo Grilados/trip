@@ -17,12 +17,12 @@ class SideMenu extends Component {
           </View>
           <DrawerItems hidden={false}
             {...this.props}
-                getLabel = {(scene) => (
+              getLabel = {(scene) =>  (
                 <View style={styles.items}>
                     <Text style={scene.focused ? styles.activeTintColor : styles.inactiveTintColor}>{this.props.getLabel(scene)}</Text>
                 </View>
-            )}
-          />
+              )}
+          /> 
       </View>
     );
   }

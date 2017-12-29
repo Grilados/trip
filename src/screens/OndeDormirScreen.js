@@ -4,11 +4,11 @@ import { Header } from '../components';
 
 export default class OndeDormirScreen extends Component {
     render() {
-        const { navigate } = this.props.navigation;
+        const { navigate, goBack } = this.props.navigation;
         return(
             <View>
                 <StatusBar backgroundColor='#7EB239' />
-                <Header openSideMenu={()=>navigate("DrawerOpen")} />
+                <Header onClick={()=>goBack()} />
             </View>
         );
     }

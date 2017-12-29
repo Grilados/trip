@@ -39,11 +39,11 @@ export default class PontosTuristicosScreen extends Component {
     }
 
     render() {
-        const { navigate } = this.props.navigation;
+        const { navigate, goBack } = this.props.navigation;
         return(
             <View style={styles.container}>
                 <StatusBar backgroundColor='#7EB239' />
-                <Header openSideMenu={()=>navigate("DrawerOpen")} />
+                <Header onClick={()=>goBack()} />
                 
                 <View style={styles.content}>
                     <ItemChoice 

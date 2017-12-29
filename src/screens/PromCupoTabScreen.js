@@ -5,10 +5,10 @@ import { Header } from '../components';
 
 export default class PromCupoTabScreen extends Component {  
     render() {
-        const { navigate } = this.props.navigation;
+        const { navigate, goBack } = this.props.navigation;
         return(
             <View style={styles.container}>
-                <Header openSideMenu={()=>navigate("DrawerOpen")} />
+                <Header onClick={()=>goBack()} />
                 <Tab />
             </View>
         );

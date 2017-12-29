@@ -12,13 +12,24 @@ const { width } = Dimensions.get('window');
 
 class Header extends Component {
     render() {
-        return(
-            <View style={styles.container}>
-                <View style={styles.headerLeft}>
-                    <ButtonHeaderOpenSideMenu onClick={this.props.openSideMenu} />
-                </View>
-            </View>
-        );
+        switch (this.props.openSideMenu) {
+            case true:
+                return(
+                    <View style={styles.container}>
+                        <View style={styles.headerLeft}>
+                            <ButtonHeaderOpenSideMenu onClick={this.props.onClick} />
+                        </View>
+                    </View>
+                );
+            default:
+                return(
+                    <View style={styles.container}>
+                        <View style={styles.headerLeft}>
+                            <ButtonHeaderBack onClick={this.props.onClick} />
+                        </View>
+                    </View> 
+                );
+        }
     }
 }
 
