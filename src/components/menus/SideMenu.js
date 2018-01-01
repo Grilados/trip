@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, Dimensions, Image, StyleSheet } from 'react-native';
 import { List, ListItem } from 'native-base';
 import { DrawerItems } from 'react-navigation';
 import {  User } from '../index';
@@ -9,6 +9,18 @@ const { width, height } = Dimensions.get('window');
 const routes = ["Inicio", "Promocoes", "Comercios"];
 
 class SideMenu extends Component {
+  renderScene(scene) {
+    if (scene.focused) {
+      return(
+        <View style={styles.item}>
+          <Image style={styles.image} source={require('../../imgs/icons/menu-selected.png')} /> 
+          <Text style={styles.activeTintColor}>{this.props.getLabel(scene)}</Text>
+        </View>
+      );
+    }
+    return <Text style={styles.inactiveTintColor}>{this.props.getLabel(scene)}</Text>;
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -19,7 +31,7 @@ class SideMenu extends Component {
             {...this.props}
               getLabel = {(scene) =>  (
                 <View style={styles.items}>
-                    <Text style={scene.focused ? styles.activeTintColor : styles.inactiveTintColor}>{this.props.getLabel(scene)}</Text>
+                    {this.renderScene(scene)}
                 </View>
               )}
           /> 
@@ -50,11 +62,20 @@ const styles = StyleSheet.create({
     borderColor: '#25303A',
     borderBottomWidth: 0.5,
   },
-    inactiveTintColor : {
+  item : {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  image : {
+    width: 12,
+    height: 12,
+    marginRight: 10
+  },
+  inactiveTintColor : {
     fontSize: 16,
     color: '#FFFFFF'
   },
-    activeTintColor : {
+  activeTintColor : {
     fontSize: 16,
     color: '#F6BB27'
   },

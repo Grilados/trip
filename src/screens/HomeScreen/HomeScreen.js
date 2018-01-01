@@ -3,6 +3,7 @@ import {
     View,
     Text,
     TouchableOpacity,
+    Image,
     Dimensions,
     StatusBar,
     StyleSheet
@@ -24,7 +25,7 @@ export default class HomeScreen extends Component {
                 <View style={styles.content}>
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('PontosTuristicos')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
+                            <Image style={styles.image} source={require('../../imgs/icons/principal-one.png')} resizeMode="contain" />
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Pontos turísticos</Text>
@@ -39,7 +40,7 @@ export default class HomeScreen extends Component {
 
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('Promocoes')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
+                            <Image style={styles.image} source={require('../../imgs/icons/principal-two.png')} resizeMode="contain" />
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Promoções</Text>
@@ -54,7 +55,7 @@ export default class HomeScreen extends Component {
                     
                     <TouchableOpacity style={styles.item} onPress={()=>navigate('Comercios')}>
                         <View style={styles.iconItem}>
-                            <Icon  name="ios-cog-outline" color="#7EB239" size={85} />
+                            <Image style={styles.image} source={require('../../imgs/icons/principal-three.png')} resizeMode="contain" />
                         </View>
                         <View style={styles.infoItem}>
                             <Text style={styles.titleItem}>Comércios</Text>
@@ -80,21 +81,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF'
     },
     content : {
-        marginTop: 85,
+        marginTop: 80,
         alignItems: 'center'
     },
     item : {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20
+        paddingVertical: 30
     },
     iconItem : {
-        marginRight: 20        
+        width: 85,
+        height: 55,
+        marginRight: 10        
+    },
+    image : {
+        width: 85,
+        height: 65
     },
     infoItem : {
         flexDirection: 'column',
-        width: width-160,
+        width: width-150,
         marginRight: 10
     },
     titleItem : {
